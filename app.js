@@ -19,8 +19,8 @@ const escapeHTML = (value = "") =>
 async function loadDatabase() {
   try {
     const [heroesResponse, patchesResponse] = await Promise.all([
-      fetch("data/heroes.json"),
-      fetch("data/patches.json")
+      fetch("heroes.json"),
+      fetch("patches.json")
     ]);
 
     if (!heroesResponse.ok || !patchesResponse.ok) {
