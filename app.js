@@ -15,34 +15,148 @@ const escapeHTML = (value = "") =>
     "'": "&#39;"
   }[char]));
 
-// Carrega o banco de dados
+const normalize = value =>
+  String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+
+const makeId = name =>
+  normalize(name).replace(/[^a-z0-9]+/g, "-");
+
+function parseDate(date) {
+  if (!date) return 0;
+
+  const months = {
+    janeiro: 0, fevereiro: 1, marco: 2, março: 2,
+    abril: 3, maio: 4, junho: 5, julho: 6,
+    agosto: 7, setembro: 8, outubro: 9,
+    novembro: 10, dezembro: 11
+  };
+
+  const match = String(date).match(
+    /(\d{1,2})\s+de\s+([a-zçã]+)\s+de\s+(\d{4})/i
+  );
+
+  if (match) {
+    const day = Number(match[1]);
+    const month = months[normalize(match[2])];
+    const year = Number(match[3]);
+
+    if (month !== undefined) {
+      return new Date(year, month, day).getTime();
+    }
+  }
+
+  const parsed = Date.parse(date);
+  return Number.isNaN(parsed) ? 0 : parsed;
+}
+
+// Carrega os bancos de dados
 async function loadDatabase() {
   try {
-    const [heroesResponse, patchesResponse] = await Promise.all([
+    const responses = await Promise.all([
       fetch("heroes.json"),
-      fetch("patches.json")
+      fetch("patches.json"),
+      fetch("changes.json")
     ]);
 
-    if (!heroesResponse.ok || !patchesResponse.ok) {
-      throw new Error("Não foi possível carregar os arquivos JSON.");
+    if (responses.some(response => !response.ok)) {
+      throw new Error(
+        "Não foi possível carregar um ou mais arquivos JSON."
+      );
     }
 
-    heroes = await heroesResponse.json();
-    patches = await patchesResponse.json();
+    const [heroesData, patchesData, changesData] =
+      await Promise.all(responses.map(response => response.json()));
+
+    heroes = Array.isArray(heroesData)
+      ? heroesData
+      : heroesData.heroes || [];
+
+    patches = Array.isArray(patchesData)
+      ? patchesData
+      : patchesData.patches || [];
+
+    const changeRecords = Array.isArray(changesData)
+      ? changesData
+      : changesData.records || [];
+
+    // Converte os registros novos para o formato usado pelo site
+    const importedChanges = changeRecords.map((record, index) => {
+      const valueChanges = record.value_changes || [];
+
+      const values = valueChanges.map(change => ({
+        oldValue: change.old_value,
+        newValue: change.new_value,
+        text: change.text
+      }));
+
+      return {
+        id: `official-${index}-${makeId(record.hero)}-${record.date || ""}`,
+        hero: record.hero || "Herói não identificado",
+        heroId: makeId(record.hero),
+        date: record.date || "",
+        patch: record.patch_title || "Nota oficial",
+        title: record.patch_title || "Alteração",
+        ability: record.category === "hero_update"
+          ? "Balanceamento"
+          : "Atualização",
+        change: record.raw_text || "",
+        summary: record.raw_text || "",
+        oldValue: values.length ? values[0].oldValue : undefined,
+        newValue: values.length ? values[0].newValue : undefined,
+        valueChanges: values,
+        mode: "Overwatch",
+        source: record.source || "",
+        category: record.category || ""
+      };
+    });
+
+    // Combina o histórico antigo com os novos registros oficiais
+    patches = [...patches, ...importedChanges];
+
+    // Inclui automaticamente heróis encontrados no histórico
+    const knownHeroes = new Set(
+      heroes.map(hero => normalize(hero.name))
+    );
+
+    const discoveredHeroes = [
+      ...new Set(
+        importedChanges
+          .map(patch => patch.hero)
+          .filter(name => name && name !== "Herói não identificado")
+      )
+    ];
+
+    discoveredHeroes.forEach(name => {
+      if (!knownHeroes.has(normalize(name))) {
+        heroes.push({
+          id: makeId(name),
+          name,
+          role: "Não cadastrada",
+          abilities: [],
+          history: []
+        });
+      }
+    });
 
     renderHeroes();
     renderPatches();
+
   } catch (error) {
     heroesContainer.innerHTML = `
       <p>Erro ao carregar o banco de dados.
-      Verifique os arquivos JSON.</p>
+      Verifique se heroes.json, patches.json e changes.json
+      estão publicados na raiz do repositório.</p>
     `;
 
     console.error(error);
   }
 }
 
-// Junta o histórico geral com o histórico individual do herói
+// Histórico completo de um herói
 function getHeroHistory(hero) {
   const individualHistory = [
     ...(hero.history || []),
@@ -50,41 +164,39 @@ function getHeroHistory(hero) {
   ];
 
   const globalHistory = patches.filter(patch =>
-    patch.heroId === hero.id ||
-    patch.hero === hero.name
+    normalize(patch.heroId) === normalize(hero.id) ||
+    normalize(patch.hero) === normalize(hero.name)
   );
 
   const combined = [...individualHistory, ...globalHistory];
-
-  // Evita duplicar registros que tenham o mesmo identificador
   const unique = new Map();
 
   combined.forEach((patch, index) => {
     const key = patch.id ||
-      `${patch.date || ""}-${patch.mode || "Overwatch"}-${patch.ability || patch.title || ""}-${index}`;
+      `${patch.date || ""}-${patch.mode || "Overwatch"}-${patch.ability || patch.title || ""}-${patch.change || ""}-${index}`;
 
-    unique.set(key, patch);
+    if (!unique.has(key)) {
+      unique.set(key, patch);
+    }
   });
 
   return [...unique.values()].sort((a, b) =>
-    (b.date || "").localeCompare(a.date || "")
+    parseDate(b.date) - parseDate(a.date)
   );
 }
 
-// Cria os cards dos heróis
+// Cards dos heróis
 function renderHeroes() {
-  const query = searchInput.value
-    .trim()
-    .toLocaleLowerCase("pt-BR");
+  const query = normalize(searchInput.value);
 
   const filteredHeroes = heroes.filter(hero => {
     const searchableText = [
       hero.name,
       hero.role,
       ...(hero.abilities || [])
-    ].join(" ").toLocaleLowerCase("pt-BR");
+    ].join(" ");
 
-    return searchableText.includes(query);
+    return normalize(searchableText).includes(query);
   });
 
   if (filteredHeroes.length === 0) {
@@ -103,7 +215,7 @@ function renderHeroes() {
         <h3>${escapeHTML(hero.name)}</h3>
 
         <span class="role">
-          ${escapeHTML(hero.role)}
+          ${escapeHTML(hero.role || "Função não cadastrada")}
         </span>
 
         <div class="card-bottom">
@@ -123,95 +235,89 @@ function renderHeroes() {
     });
 }
 
-// Mostra as alterações mais recentes na página principal
+// Histórico recente na página principal
 function renderPatches() {
-  const allPatches = heroes.flatMap(hero =>
-    getHeroHistory(hero).map(patch => ({
-      ...patch,
-      heroName: hero.name
-    }))
-  );
+  const allPatches = patches
+    .filter(patch => patch.hero || patch.heroId)
+    .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
-  const sorted = allPatches.sort((a, b) =>
-    (b.date || "").localeCompare(a.date || "")
-  );
-
-  if (sorted.length === 0) {
+  if (allPatches.length === 0) {
     patchesContainer.innerHTML = `
-      <p>
-        O histórico de patches ainda não foi importado.
-        Os contadores mostram apenas os registros
-        disponíveis no banco atual.
-      </p>
+      <p>O histórico ainda não foi importado.</p>
     `;
     return;
   }
 
-  patchesContainer.innerHTML = sorted
-    .slice(0, 20)
-    .map(patch => `
-      <article class="patch">
+  patchesContainer.innerHTML = allPatches
+    .slice(0, 30)
+    .map(patch => {
+      const values = patch.valueChanges || [];
 
-        <h3>
-          ${escapeHTML(patch.heroName)}
-          — ${escapeHTML(patch.title || patch.ability || "Alteração")}
-        </h3>
+      return `
+        <article class="patch">
 
-        <p>
-          ${escapeHTML(patch.date || "Data não informada")}
-          · ${escapeHTML(patch.mode || "Overwatch")}
-        </p>
+          <h3>
+            ${escapeHTML(patch.hero || patch.heroName || "Herói")}
+            — ${escapeHTML(patch.title || patch.ability || "Alteração")}
+          </h3>
 
-        <p>
-          ${escapeHTML(patch.change || patch.summary || "")}
-        </p>
-
-        ${patch.oldValue !== undefined ||
-          patch.newValue !== undefined ? `
-          <p>
-            <strong>Valores:</strong>
-            ${escapeHTML(patch.oldValue ?? "—")}
-            →
-            ${escapeHTML(patch.newValue ?? "—")}
+          <p class="muted">
+            ${escapeHTML(patch.date || "Data não informada")}
+            · ${escapeHTML(patch.mode || "Overwatch")}
           </p>
-        ` : ""}
 
-        ${patch.rationale ? `
           <p>
-            <strong>Justificativa da Blizzard:</strong>
-            ${escapeHTML(patch.rationale)}
+            ${escapeHTML(patch.change || patch.summary || "")}
           </p>
-        ` : ""}
 
-        ${patch.source ? `
-          <a href="${escapeHTML(patch.source)}"
-             target="_blank"
-             rel="noopener noreferrer">
-            Fonte oficial
-          </a>
-        ` : ""}
+          ${values.length ? `
+            <div class="value-changes">
+              <strong>Valores registrados:</strong>
+              ${values.map(value => `
+                <p>
+                  ${escapeHTML(value.text || "")}
+                  ${value.oldValue !== undefined ||
+                    value.newValue !== undefined ? `
+                    <br>
+                    <strong>
+                      ${escapeHTML(value.oldValue ?? "—")}
+                      → ${escapeHTML(value.newValue ?? "—")}
+                    </strong>
+                  ` : ""}
+                </p>
+              `).join("")}
+            </div>
+          ` : patch.oldValue !== undefined ||
+               patch.newValue !== undefined ? `
+            <p>
+              <strong>Valores:</strong>
+              ${escapeHTML(patch.oldValue ?? "—")}
+              → ${escapeHTML(patch.newValue ?? "—")}
+            </p>
+          ` : ""}
 
-      </article>
-    `).join("");
+          ${patch.source ? `
+            <a href="${escapeHTML(patch.source)}"
+               target="_blank"
+               rel="noopener noreferrer">
+              Fonte oficial
+            </a>
+          ` : ""}
+
+        </article>
+      `;
+    }).join("");
 }
 
-// Cria a janela de detalhes do herói
+// Abre a ficha do herói
 function openHero(heroId) {
-  const hero = heroes.find(item => item.id === heroId);
+  const hero = heroes.find(item =>
+    String(item.id) === String(heroId)
+  );
 
   if (!hero) return;
 
   const history = getHeroHistory(hero);
-
-  let modal = document.querySelector("#hero-modal");
-
-  if (!modal) {
-    modal = document.createElement("div");
-    modal.id = "hero-modal";
-    modal.className = "hero-modal";
-
-    document.body.appendChild(modal);
-  }
 
   const normalHistory = history.filter(
     patch => patch.mode !== "Stadium"
@@ -220,6 +326,15 @@ function openHero(heroId) {
   const stadiumHistory = history.filter(
     patch => patch.mode === "Stadium"
   );
+
+  let modal = document.querySelector("#hero-modal");
+
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "hero-modal";
+    modal.className = "hero-modal";
+    document.body.appendChild(modal);
+  }
 
   modal.innerHTML = `
     <div class="hero-modal-backdrop"></div>
@@ -230,7 +345,7 @@ function openHero(heroId) {
         aria-label="Fechar">×</button>
 
       <span class="role">
-        ${escapeHTML(hero.role)}
+        ${escapeHTML(hero.role || "Função não cadastrada")}
       </span>
 
       <h2>${escapeHTML(hero.name)}</h2>
@@ -249,11 +364,9 @@ function openHero(heroId) {
       </ul>
 
       <h3>Histórico de Overwatch</h3>
-
       ${renderHistory(normalHistory)}
 
       <h3>Histórico de Stadium</h3>
-
       ${renderHistory(stadiumHistory)}
 
     </section>
@@ -269,65 +382,77 @@ function openHero(heroId) {
     .addEventListener("click", closeHero);
 }
 
-// Formata uma lista de alterações
+// Exibe as alterações na ficha
 function renderHistory(history) {
   if (history.length === 0) {
     return `
-      <p>
+      <p class="muted">
         Nenhuma alteração importada nesta seção.
-        Isso não significa que o herói nunca recebeu
-        mudanças.
+        Isso não significa que o herói nunca recebeu mudanças.
       </p>
     `;
   }
 
-  return history.map(patch => `
-    <article class="history-item">
+  return history.map(patch => {
+    const values = patch.valueChanges || [];
 
-      <p>
-        <strong>
-          ${escapeHTML(patch.date || "Data desconhecida")}
-        </strong>
-        · ${escapeHTML(patch.patch || "Patch não identificado")}
-      </p>
+    return `
+      <article class="history-item">
 
-      <h4>
-        ${escapeHTML(patch.ability || patch.title || "Alteração")}
-      </h4>
-
-      <p>
-        ${escapeHTML(patch.change || patch.summary || "")}
-      </p>
-
-      ${patch.oldValue !== undefined ||
-        patch.newValue !== undefined ? `
-        <p>
-          <strong>Antes:</strong>
-          ${escapeHTML(patch.oldValue ?? "—")}
-          <br>
-          <strong>Depois:</strong>
-          ${escapeHTML(patch.newValue ?? "—")}
+        <p class="muted">
+          <strong>
+            ${escapeHTML(patch.date || "Data desconhecida")}
+          </strong>
+          · ${escapeHTML(patch.patch || "Patch não identificado")}
         </p>
-      ` : ""}
 
-      <p>
-        <strong>Justificativa oficial:</strong>
-        ${escapeHTML(
-          patch.rationale ||
-          "Justificativa não registrada."
-        )}
-      </p>
+        <h4>
+          ${escapeHTML(patch.ability || patch.title || "Alteração")}
+        </h4>
 
-      ${patch.source ? `
-        <a href="${escapeHTML(patch.source)}"
-           target="_blank"
-           rel="noopener noreferrer">
-          Consultar nota oficial
-        </a>
-      ` : ""}
+        <p>
+          ${escapeHTML(patch.change || patch.summary || "")}
+        </p>
 
-    </article>
-  `).join("");
+        ${values.length ? `
+          <div class="value-changes">
+            ${values.map(value => `
+              <p>
+                ${escapeHTML(value.text || "")}
+                ${value.oldValue !== undefined ||
+                  value.newValue !== undefined ? `
+                  <br>
+                  <strong>
+                    Antes: ${escapeHTML(value.oldValue ?? "—")}
+                    <br>
+                    Depois: ${escapeHTML(value.newValue ?? "—")}
+                  </strong>
+                ` : ""}
+              </p>
+            `).join("")}
+          </div>
+        ` : patch.oldValue !== undefined ||
+             patch.newValue !== undefined ? `
+          <p>
+            <strong>Antes:</strong>
+            ${escapeHTML(patch.oldValue ?? "—")}
+            <br>
+            <strong>Depois:</strong>
+            ${escapeHTML(patch.newValue ?? "—")}
+          </p>
+        ` : ""}
+
+        ${patch.source ? `
+          <a href="${escapeHTML(patch.source)}"
+             target="_blank"
+             rel="noopener noreferrer">
+            Consultar nota oficial
+          </a>
+        ` : ""}
+
+      </article>
+    `;
+  }).join("");
 }
 
 // Fecha a ficha
@@ -340,7 +465,7 @@ function closeHero() {
   }
 }
 
-// Eventos da interface
+// Eventos
 searchInput.addEventListener("input", renderHeroes);
 
 document.addEventListener("keydown", event => {
