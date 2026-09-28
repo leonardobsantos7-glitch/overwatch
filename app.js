@@ -1,27 +1,26 @@
 
-const HEROES_URL = "data/heroes.json";
-const PATCHES_URL = "data/patches.json";
+const heroesContainer = document.querySelector("#heroes");
+const patchesContainer = document.querySelector("#patches");
+const searchInput = document.querySelector("#search");
 
 let heroes = [];
 let patches = [];
 
-const $ = (selector) => document.querySelector(selector);
-
-function escapeHTML(value) {
-  return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+const escapeHTML = (value = "") =>
+  String(value).replace(/[&<>"']/g, char => ({
     "&": "&amp;",
     "<": "&lt;",
     ">": "&gt;",
     '"': "&quot;",
     "'": "&#39;"
-  })[char]);
-}
+  }[char]));
 
+// Carrega o banco de dados
 async function loadDatabase() {
   try {
     const [heroesResponse, patchesResponse] = await Promise.all([
-      fetch(HEROES_URL),
-      fetch(PATCHES_URL)
+      fetch("data/heroes.json"),
+      fetch("data/patches.json")
     ]);
 
     if (!heroesResponse.ok || !patchesResponse.ok) {
@@ -33,343 +32,322 @@ async function loadDatabase() {
 
     renderHeroes();
     renderPatches();
-    updateStats();
-
   } catch (error) {
+    heroesContainer.innerHTML = `
+      <p>Erro ao carregar o banco de dados.
+      Verifique os arquivos JSON.</p>
+    `;
+
     console.error(error);
-
-    if ($("#heroes")) {
-      $("#heroes").innerHTML =
-        "<p>Erro ao carregar o banco de dados. Confira os arquivos JSON.</p>";
-    }
   }
 }
 
-function updateStats() {
-  const heroCount = $("#hero-count");
-  const patchCount = $("#patch-count");
+// Junta o histórico geral com o histórico individual do herói
+function getHeroHistory(hero) {
+  const individualHistory = [
+    ...(hero.history || []),
+    ...(hero.stadium?.history || [])
+  ];
 
-  if (heroCount) {
-    heroCount.textContent = `${heroes.length} heróis cadastrados`;
-  }
+  const globalHistory = patches.filter(patch =>
+    patch.heroId === hero.id ||
+    patch.hero === hero.name
+  );
 
-  if (patchCount) {
-    patchCount.textContent = `${patches.length} alterações importadas`;
-  }
+  const combined = [...individualHistory, ...globalHistory];
+
+  // Evita duplicar registros que tenham o mesmo identificador
+  const unique = new Map();
+
+  combined.forEach((patch, index) => {
+    const key = patch.id ||
+      `${patch.date || ""}-${patch.mode || "Overwatch"}-${patch.ability || patch.title || ""}-${index}`;
+
+    unique.set(key, patch);
+  });
+
+  return [...unique.values()].sort((a, b) =>
+    (b.date || "").localeCompare(a.date || "")
+  );
 }
 
+// Cria os cards dos heróis
 function renderHeroes() {
-  const container = $("#heroes");
-
-  if (!container) return;
-
-  const searchInput = $("#search");
-  const roleFilter = $("#role-filter");
-
-  const query = (searchInput?.value || "")
+  const query = searchInput.value
     .trim()
     .toLocaleLowerCase("pt-BR");
 
-  const selectedRole = roleFilter?.value || "";
-
-  const filteredHeroes = heroes.filter((hero) => {
+  const filteredHeroes = heroes.filter(hero => {
     const searchableText = [
       hero.name,
       hero.role,
       ...(hero.abilities || [])
     ].join(" ").toLocaleLowerCase("pt-BR");
 
-    const matchesSearch = searchableText.includes(query);
-    const matchesRole = !selectedRole || hero.role === selectedRole;
-
-    return matchesSearch && matchesRole;
+    return searchableText.includes(query);
   });
 
   if (filteredHeroes.length === 0) {
-    container.innerHTML = "<p>Nenhum herói encontrado.</p>";
+    heroesContainer.innerHTML =
+      "<p>Nenhum herói encontrado.</p>";
     return;
   }
 
-  container.innerHTML = filteredHeroes.map((hero) => {
-    const normalCount = (hero.history || []).length;
-    const stadiumCount = (hero.stadium?.history || []).length;
-    const totalCount = normalCount + stadiumCount;
+  heroesContainer.innerHTML = filteredHeroes.map(hero => {
+    const history = getHeroHistory(hero);
 
     return `
-      <article class="card hero-card"
-        data-hero-id="${escapeHTML(hero.id)}"
-        tabindex="0"
-        role="button"
-        aria-label="Abrir ficha de ${escapeHTML(hero.name)}">
+      <button class="hero-card"
+        data-hero-id="${escapeHTML(hero.id)}">
 
         <h3>${escapeHTML(hero.name)}</h3>
 
-        <span class="tag">
+        <span class="role">
           ${escapeHTML(hero.role)}
         </span>
 
-        <p class="muted">
-          ${(hero.abilities || []).length} habilidades cadastradas
-        </p>
-
         <div class="card-bottom">
           <span>Alterações registradas</span>
-          <strong>${totalCount}</strong>
+          <strong class="count">${history.length}</strong>
         </div>
-      </article>
+
+      </button>
     `;
   }).join("");
 
-  container.querySelectorAll("[data-hero-id]").forEach((card) => {
-    const open = () => openHero(card.dataset.heroId);
-
-    card.addEventListener("click", open);
-
-    card.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        open();
-      }
+  document.querySelectorAll("[data-hero-id]")
+    .forEach(card => {
+      card.addEventListener("click", () => {
+        openHero(card.dataset.heroId);
+      });
     });
-  });
 }
 
+// Mostra as alterações mais recentes na página principal
 function renderPatches() {
-  const container = $("#patches");
+  const allPatches = heroes.flatMap(hero =>
+    getHeroHistory(hero).map(patch => ({
+      ...patch,
+      heroName: hero.name
+    }))
+  );
 
-  if (!container) return;
-
-  const sortedPatches = [...patches].sort((a, b) =>
+  const sorted = allPatches.sort((a, b) =>
     (b.date || "").localeCompare(a.date || "")
   );
 
-  if (sortedPatches.length === 0) {
-    container.innerHTML = `
-      <div class="patch">
-        <strong>Histórico ainda não importado.</strong>
-        <p class="muted">
-          As alterações serão exibidas aqui após a importação
-          e verificação das notas oficiais da Blizzard.
-        </p>
-      </div>
+  if (sorted.length === 0) {
+    patchesContainer.innerHTML = `
+      <p>
+        O histórico de patches ainda não foi importado.
+        Os contadores mostram apenas os registros
+        disponíveis no banco atual.
+      </p>
     `;
     return;
   }
 
-  container.innerHTML = sortedPatches.slice(0, 20).map((patch) => `
-    <article class="patch">
-      <h3>
-        ${escapeHTML(patch.hero || "Herói")}
-        — ${escapeHTML(patch.title || patch.patch || "Alteração")}
-      </h3>
+  patchesContainer.innerHTML = sorted
+    .slice(0, 20)
+    .map(patch => `
+      <article class="patch">
 
-      <p class="muted">
-        ${escapeHTML(patch.date || "Data não informada")}
-        · ${escapeHTML(patch.mode || "Overwatch")}
-      </p>
+        <h3>
+          ${escapeHTML(patch.heroName)}
+          — ${escapeHTML(patch.title || patch.ability || "Alteração")}
+        </h3>
 
-      <p>${escapeHTML(patch.change || patch.summary || "")}</p>
-
-      ${patch.rationale ? `
         <p>
-          <strong>Justificativa da Blizzard:</strong>
-          ${escapeHTML(patch.rationale)}
+          ${escapeHTML(patch.date || "Data não informada")}
+          · ${escapeHTML(patch.mode || "Overwatch")}
         </p>
-      ` : ""}
 
-      ${patch.source ? `
-        <a href="${escapeHTML(patch.source)}"
-           target="_blank"
-           rel="noopener noreferrer">
-          Ver fonte oficial
-        </a>
-      ` : ""}
-    </article>
-  `).join("");
+        <p>
+          ${escapeHTML(patch.change || patch.summary || "")}
+        </p>
+
+        ${patch.oldValue !== undefined ||
+          patch.newValue !== undefined ? `
+          <p>
+            <strong>Valores:</strong>
+            ${escapeHTML(patch.oldValue ?? "—")}
+            →
+            ${escapeHTML(patch.newValue ?? "—")}
+          </p>
+        ` : ""}
+
+        ${patch.rationale ? `
+          <p>
+            <strong>Justificativa da Blizzard:</strong>
+            ${escapeHTML(patch.rationale)}
+          </p>
+        ` : ""}
+
+        ${patch.source ? `
+          <a href="${escapeHTML(patch.source)}"
+             target="_blank"
+             rel="noopener noreferrer">
+            Fonte oficial
+          </a>
+        ` : ""}
+
+      </article>
+    `).join("");
 }
 
-function createModal() {
-  let modal = $("#hero-modal");
-
-  if (modal) return modal;
-
-  modal = document.createElement("div");
-  modal.id = "hero-modal";
-  modal.className = "hero-modal";
-
-  modal.innerHTML = `
-    <div class="hero-modal-backdrop" data-close-modal></div>
-
-    <section class="hero-modal-content"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modal-title">
-
-      <button class="modal-close"
-        type="button"
-        aria-label="Fechar ficha">
-        ×
-      </button>
-
-      <div id="hero-detail"></div>
-    </section>
-  `;
-
-  document.body.appendChild(modal);
-
-  const closeButton = modal.querySelector(".modal-close");
-
-  closeButton.addEventListener("click", closeHero);
-
-  modal.querySelector("[data-close-modal]")
-    .addEventListener("click", closeHero);
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeHero();
-  });
-
-  return modal;
-}
-
+// Cria a janela de detalhes do herói
 function openHero(heroId) {
-  const hero = heroes.find((item) => item.id === heroId);
+  const hero = heroes.find(item => item.id === heroId);
 
   if (!hero) return;
 
-  const modal = createModal();
-  const detail = $("#hero-detail");
+  const history = getHeroHistory(hero);
 
-  const normalHistory = hero.history || [];
-  const stadiumHistory = hero.stadium?.history || [];
+  let modal = document.querySelector("#hero-modal");
 
-  detail.innerHTML = `
-    <div class="detail-header">
-      <span class="tag">${escapeHTML(hero.role)}</span>
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "hero-modal";
+    modal.className = "hero-modal";
 
-      <h2 id="modal-title">
-        ${escapeHTML(hero.name)}
-      </h2>
+    document.body.appendChild(modal);
+  }
 
-      <p>${escapeHTML(hero.summary || "")}</p>
+  const normalHistory = history.filter(
+    patch => patch.mode !== "Stadium"
+  );
 
-      <p class="muted">
-        Lançamento: ${escapeHTML(hero.release || "Não informado")}
+  const stadiumHistory = history.filter(
+    patch => patch.mode === "Stadium"
+  );
+
+  modal.innerHTML = `
+    <div class="hero-modal-backdrop"></div>
+
+    <section class="hero-modal-content">
+
+      <button class="hero-modal-close"
+        aria-label="Fechar">×</button>
+
+      <span class="role">
+        ${escapeHTML(hero.role)}
+      </span>
+
+      <h2>${escapeHTML(hero.name)}</h2>
+
+      <p>
+        Lançamento:
+        ${escapeHTML(hero.release || "Data não cadastrada")}
       </p>
-    </div>
 
-    <section class="detail-section">
       <h3>Habilidades</h3>
 
-      ${
-        hero.abilities?.length
-          ? `<ul>
-              ${hero.abilities.map((ability) =>
-                `<li>${escapeHTML(ability)}</li>`
-              ).join("")}
-            </ul>`
-          : `<p class="muted">
-              Habilidades ainda não cadastradas.
-            </p>`
-      }
-    </section>
+      <ul>
+        ${(hero.abilities || []).map(ability => `
+          <li>${escapeHTML(ability)}</li>
+        `).join("") || "<li>Dados ainda não cadastrados.</li>"}
+      </ul>
 
-    <section class="detail-section">
       <h3>Histórico de Overwatch</h3>
 
-      ${renderHeroHistory(normalHistory)}
-    </section>
+      ${renderHistory(normalHistory)}
 
-    <section class="detail-section">
       <h3>Histórico de Stadium</h3>
 
-      ${renderHeroHistory(stadiumHistory)}
+      ${renderHistory(stadiumHistory)}
+
     </section>
   `;
 
   modal.classList.add("active");
   document.body.style.overflow = "hidden";
 
-  modal.querySelector(".modal-close").focus();
+  modal.querySelector(".hero-modal-close")
+    .addEventListener("click", closeHero);
+
+  modal.querySelector(".hero-modal-backdrop")
+    .addEventListener("click", closeHero);
 }
 
-function renderHeroHistory(history) {
-  if (!history.length) {
+// Formata uma lista de alterações
+function renderHistory(history) {
+  if (history.length === 0) {
     return `
-      <p class="muted">
-        Nenhuma alteração importada ainda.
-        Isso não significa que o herói nunca recebeu mudanças.
+      <p>
+        Nenhuma alteração importada nesta seção.
+        Isso não significa que o herói nunca recebeu
+        mudanças.
       </p>
     `;
   }
 
-  const sortedHistory = [...history].sort((a, b) =>
-    (b.date || "").localeCompare(a.date || "")
-  );
-
-  return sortedHistory.map((change) => `
+  return history.map(patch => `
     <article class="history-item">
 
-      <p class="muted">
-        ${escapeHTML(change.date || "Data não informada")}
-        · ${escapeHTML(change.patch || "Patch não identificado")}
+      <p>
+        <strong>
+          ${escapeHTML(patch.date || "Data desconhecida")}
+        </strong>
+        · ${escapeHTML(patch.patch || "Patch não identificado")}
       </p>
 
       <h4>
-        ${escapeHTML(change.ability || change.title || "Alteração")}
+        ${escapeHTML(patch.ability || patch.title || "Alteração")}
       </h4>
 
       <p>
-        ${escapeHTML(change.change || change.summary || "")}
+        ${escapeHTML(patch.change || patch.summary || "")}
       </p>
 
-      ${
-        change.oldValue !== undefined ||
-        change.newValue !== undefined
-          ? `<p>
-              <strong>Valor:</strong>
-              ${escapeHTML(change.oldValue ?? "—")}
-              →
-              ${escapeHTML(change.newValue ?? "—")}
-            </p>`
-          : ""
-      }
+      ${patch.oldValue !== undefined ||
+        patch.newValue !== undefined ? `
+        <p>
+          <strong>Antes:</strong>
+          ${escapeHTML(patch.oldValue ?? "—")}
+          <br>
+          <strong>Depois:</strong>
+          ${escapeHTML(patch.newValue ?? "—")}
+        </p>
+      ` : ""}
 
-      ${
-        change.rationale
-          ? `<p>
-              <strong>Justificativa oficial:</strong>
-              ${escapeHTML(change.rationale)}
-            </p>`
-          : `<p class="muted">
-              Justificativa oficial não registrada.
-            </p>`
-      }
+      <p>
+        <strong>Justificativa oficial:</strong>
+        ${escapeHTML(
+          patch.rationale ||
+          "Justificativa não registrada."
+        )}
+      </p>
 
-      ${
-        change.source
-          ? `<a href="${escapeHTML(change.source)}"
-                target="_blank"
-                rel="noopener noreferrer">
-                Consultar fonte oficial
-             </a>`
-          : ""
-      }
+      ${patch.source ? `
+        <a href="${escapeHTML(patch.source)}"
+           target="_blank"
+           rel="noopener noreferrer">
+          Consultar nota oficial
+        </a>
+      ` : ""}
 
     </article>
   `).join("");
 }
 
+// Fecha a ficha
 function closeHero() {
-  const modal = $("#hero-modal");
+  const modal = document.querySelector("#hero-modal");
 
-  if (!modal) return;
-
-  modal.classList.remove("active");
-  document.body.style.overflow = "";
+  if (modal) {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
 }
 
-$("#search")?.addEventListener("input", renderHeroes);
+// Eventos da interface
+searchInput.addEventListener("input", renderHeroes);
 
-$("#role-filter")?.addEventListener("change", renderHeroes);
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closeHero();
+  }
+});
 
+// Inicialização
 loadDatabase();
