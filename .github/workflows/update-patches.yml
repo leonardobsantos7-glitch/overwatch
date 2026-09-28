@@ -28,10 +28,13 @@ jobs:
       - name: Coletar patch notes oficiais
         run: python collect.py
 
-      - name: Salvar banco atualizado
+      - name: Processar alterações por herói
+        run: python process.py
+
+      - name: Salvar bancos atualizados
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add archive.json
-          git diff --cached --quiet || git commit -m "Atualiza arquivo de patch notes"
+          git add archive.json changes.json
+          git diff --cached --quiet || git commit -m "Atualiza banco histórico de Overwatch"
           git push
