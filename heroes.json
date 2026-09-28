@@ -1,5 +1,7 @@
+
 [
   {
+    "id": "cassidy",
     "name": "Cassidy",
     "role": "Dano",
     "abilities": [
@@ -8,9 +10,15 @@
       "Granada Magnética",
       "Tiro Certeiro"
     ],
-    "summary": "Ficha inicial de demonstração. Valores oficiais serão preenchidos pelo coletor e validados."
+    "summary": "Herói de dano especializado em combate com armas de fogo.",
+    "release": "2016-05-24",
+    "history": [],
+    "stadium": {
+      "history": []
+    }
   },
   {
+    "id": "soldier-76",
     "name": "Soldado: 76",
     "role": "Dano",
     "abilities": [
@@ -20,9 +28,15 @@
       "Campo Biótico",
       "Visor Tático"
     ],
-    "summary": "Ficha inicial de demonstração."
+    "summary": "Herói de dano com rifle automático e mobilidade.",
+    "release": "2016-05-24",
+    "history": [],
+    "stadium": {
+      "history": []
+    }
   },
   {
+    "id": "ana",
     "name": "Ana",
     "role": "Suporte",
     "abilities": [
@@ -31,6 +45,11 @@
       "Granada Biótica",
       "Nanoimpulso"
     ],
-    "summary": "Ficha inicial de demonstração."
+    "summary": "Suporte de longo alcance com cura, controle e amplificação de dano.",
+    "release": "2016-07-19",
+    "history": [],
+    "stadium": {
+      "history": []
+    }
   }
 ]
