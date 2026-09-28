@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Cassidy",
+    "role": "Dano",
+    "abilities": [
+      "Pacificador",
+      "Rolamento de Combate",
+      "Granada Magnética",
+      "Tiro Certeiro"
+    ],
+    "summary": "Ficha inicial de demonstração. Valores oficiais serão preenchidos pelo coletor e validados."
+  },
+  {
+    "name": "Soldado: 76",
+    "role": "Dano",
+    "abilities": [
+      "Rifle de Pulso Pesado",
+      "Foguetes Helix",
+      "Sprint",
+      "Campo Biótico",
+      "Visor Tático"
+    ],
+    "summary": "Ficha inicial de demonstração."
+  },
+  {
+    "name": "Ana",
+    "role": "Suporte",
+    "abilities": [
+      "Rifle Biótico",
+      "Dardo Sonífero",
+      "Granada Biótica",
+      "Nanoimpulso"
+    ],
+    "summary": "Ficha inicial de demonstração."
+  }
+]
