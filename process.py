@@ -24,15 +24,14 @@ HEROES = [
 
 ALIASES = {
     "McCree": "Cassidy",
-    "Soldier:  76": "Soldado: 76",
-    "Soldier:76": "Soldado: 76",
+    "Soldier: 76": "Soldado: 76",
     "Soldier 76": "Soldado: 76",
+    "Soldier:76": "Soldado: 76",
     "Lucio": "Lúcio",
     "Torbjorn": "Torbjörn",
     "Life Weaver": "Lifeweaver",
     "Jetpack Cat": "Jetpackcat",
     "Junkerqueen": "Junker Queen",
-    "D.Mon": "D.Mon",
 }
 
 
@@ -68,7 +67,7 @@ def clean_lines(text):
 
 def split_articles(text):
     """
-    Divide o conteúdo mensal em artigos, usando títulos
+    Divide o conteúdo mensal em artigos usando títulos
     e datas das notas oficiais.
     """
     lines = clean_lines(text)
@@ -117,13 +116,14 @@ def split_articles(text):
             current.append(line)
 
     save_article()
+
     return articles
 
 
 def extract_value_changes(text):
     """
-    Extrai frases com valores alterados.
-    Mantém o texto original quando não há par numérico.
+    Extrai pares de valores de frases que usam
+    expressões como 'de X para Y'.
     """
     patterns = [
         (
@@ -155,7 +155,7 @@ def extract_value_changes(text):
     return results
 
 
-# Cabeçalhos que iniciam seções de alterações
+# Cabeçalhos que iniciam seções de Overwatch normal.
 NORMAL_HEADERS = {
     normalize("Heróis"),
     normalize("Atualizações dos heróis"),
@@ -163,16 +163,22 @@ NORMAL_HEADERS = {
     normalize("Atualizações dos Heróis"),
 }
 
+# Cabeçalhos que iniciam seções de Stadium.
 STADIUM_HEADERS = {
     normalize("Estádio"),
+    normalize("Stadium"),
     normalize("Atualizações do Estádio"),
     normalize("Atualizações de Estádio"),
+    normalize("Atualizações do Stadium"),
+    normalize("Atualizações de Stadium"),
     normalize("Atualizações do Estadio"),
     normalize("Correções de bugs do Estádio"),
-    normalize("Correções de bugs do Estadio"),
+    normalize("Correções de bugs do Stadium"),
 }
 
-# Cabeçalhos que encerram uma seção de heróis
+# Cabeçalhos que encerram uma seção de heróis.
+# Tanque, Dano e Suporte NÃO entram aqui porque
+# podem ser categorias dentro da própria seção Stadium.
 END_HEADERS = {
     normalize("Correção de bugs"),
     normalize("Correções de bugs"),
@@ -181,22 +187,29 @@ END_HEADERS = {
     normalize("Atualizações gerais"),
     normalize("Atualizações de mapas"),
     normalize("Mapas"),
-    normalize("Geral"),
     normalize("Workshop"),
     normalize("Atualizações no Jogo Competitivo"),
     normalize("Atualizações de eventos"),
     normalize("Atualizações do Arcade"),
     normalize("Atualizações de jogabilidade"),
+}
+
+
+# Cabeçalhos de categoria dentro de Stadium.
+# Eles encerram o bloco do herói atual, mas não
+# encerram a seção inteira.
+CATEGORY_HEADERS = {
     normalize("Tanque"),
     normalize("Dano"),
     normalize("Suporte"),
+    normalize("Geral"),
 }
 
 
 def extract_hero_blocks(article):
     """
-    Extrai os blocos de cada herói e identifica o modo
-    pelo cabeçalho da seção em que aparecem.
+    Extrai os blocos de cada herói e identifica
+    se pertencem a Overwatch normal ou Stadium.
     """
     lines = article["lines"]
     blocks = []
@@ -220,47 +233,64 @@ def extract_hero_blocks(article):
     for line in lines:
         normalized_line = normalize(line)
 
-        # Stadium tem prioridade, pois pode aparecer dentro
-        # das notas normais de Overwatch.
+        # Início de uma seção Stadium.
         if normalized_line in STADIUM_HEADERS:
             save_current()
+
             current_hero = None
             current_lines = []
             mode = "Stadium"
             active = True
             continue
 
+        # Início de uma seção de heróis normal.
         if normalized_line in NORMAL_HEADERS:
             save_current()
+
             current_hero = None
             current_lines = []
             mode = "Overwatch"
             active = True
             continue
 
-        if active and normalized_line in END_HEADERS:
+        if not active:
+            continue
+
+        # Categorias internas de Stadium.
+        # Encerram somente o bloco atual do herói.
+        if mode == "Stadium" and normalized_line in CATEGORY_HEADERS:
             save_current()
+
+            current_hero = None
+            current_lines = []
+            continue
+
+        # Fim da seção de heróis.
+        if normalized_line in END_HEADERS:
+            save_current()
+
             current_hero = None
             current_lines = []
             active = False
             mode = None
             continue
 
-        if not active:
-            continue
-
+        # Detecta o nome de um herói.
         hero = canonical_hero(line)
 
         if hero:
             save_current()
+
             current_hero = hero
             current_lines = []
             continue
 
+        # Guarda o texto associado ao herói atual.
         if current_hero:
             current_lines.append(line)
 
     save_current()
+
     return blocks
 
 
@@ -315,6 +345,7 @@ def main():
                     "category": "hero_update"
                 })
 
+    # Ordena os registros por data e herói.
     records.sort(
         key=lambda item: (
             item.get("date") or "",
@@ -323,14 +354,14 @@ def main():
         )
     )
 
-    stadium_count = sum(
-        1 for record in records
-        if record["mode"] == "Stadium"
-    )
-
     overwatch_count = sum(
         1 for record in records
         if record["mode"] == "Overwatch"
+    )
+
+    stadium_count = sum(
+        1 for record in records
+        if record["mode"] == "Stadium"
     )
 
     result = {
