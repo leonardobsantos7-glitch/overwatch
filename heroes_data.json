@@ -1,0 +1,12 @@
+{
+  "source": "https://overwatch.blizzard.com/pt-br/heroes/",
+  "updated_at": "2026-09-29",
+  "total_heroes": 0,
+  "failed_heroes": [
+    {
+      "source": "https://overwatch.blizzard.com/pt-br/heroes/",
+      "error": "Nenhum link individual de herói foi encontrado na página oficial. A estrutura pode ter mudado ou os links podem ser carregados por JavaScript."
+    }
+  ],
+  "heroes": []
+}
