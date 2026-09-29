@@ -395,39 +395,45 @@ def collect_hero(slug, url):
     }
 
 
+
 def collect_heroes():
     failures = []
     records = []
 
     try:
         hero_links = get_hero_links()
+
+        print(f"\nHeróis descobertos: {len(hero_links)}")
+
+        for slug, url in sorted(hero_links.items()):
+            try:
+                hero = collect_hero(slug, url)
+                records.append(hero)
+
+                print(
+                    f"OK: {hero['name']} | "
+                    f"habilidades encontradas: "
+                    f"{len(hero['abilities'])}"
+                )
+
+            except Exception as error:
+                failures.append({
+                    "slug": slug,
+                    "url": url,
+                    "error": str(error),
+                })
+
+                print(f"ERRO: {slug}: {error}")
+
+            time.sleep(0.5)
+
     except Exception as error:
+        failures.append({
+            "source": HEROES_URL,
+            "error": str(error),
+        })
+
         print(f"ERRO ao consultar elenco oficial: {error}")
-        return
-
-    print(f"\nHeróis descobertos: {len(hero_links)}")
-
-    for slug, url in sorted(hero_links.items()):
-        try:
-            hero = collect_hero(slug, url)
-            records.append(hero)
-
-            print(
-                f"OK: {hero['name']} | "
-                f"habilidades encontradas: "
-                f"{len(hero['abilities'])}"
-            )
-
-        except Exception as error:
-            failures.append({
-                "slug": slug,
-                "url": url,
-                "error": str(error),
-            })
-
-            print(f"ERRO: {slug}: {error}")
-
-        time.sleep(0.5)
 
     database = {
         "source": HEROES_URL,
@@ -443,11 +449,8 @@ def collect_heroes():
     )
 
     print(f"\nFichas coletadas: {len(records)}")
-    print(f"Heróis com falha: {len(failures)}")
-    print(
-        f"Resultado salvo em "
-        f"{HEROES_OUTPUT_FILE.resolve()}"
-    )
+    print(f"Falhas registradas: {len(failures)}")
+    print(f"Resultado salvo em {HEROES_OUTPUT_FILE.resolve()}")
 
 
 # ============================================================
