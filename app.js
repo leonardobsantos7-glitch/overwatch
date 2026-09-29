@@ -29,10 +29,19 @@ function parseDate(date) {
   if (!date) return 0;
 
   const months = {
-    janeiro: 0, fevereiro: 1, marco: 2, março: 2,
-    abril: 3, maio: 4, junho: 5, julho: 6,
-    agosto: 7, setembro: 8, outubro: 9,
-    novembro: 10, dezembro: 11
+    janeiro: 0,
+    fevereiro: 1,
+    marco: 2,
+    março: 2,
+    abril: 3,
+    maio: 4,
+    junho: 5,
+    julho: 6,
+    agosto: 7,
+    setembro: 8,
+    outubro: 9,
+    novembro: 10,
+    dezembro: 11
   };
 
   const match = String(date).match(
@@ -50,6 +59,7 @@ function parseDate(date) {
   }
 
   const parsed = Date.parse(date);
+
   return Number.isNaN(parsed) ? 0 : parsed;
 }
 
@@ -69,7 +79,9 @@ async function loadDatabase() {
     }
 
     const [heroesData, patchesData, changesData] =
-      await Promise.all(responses.map(response => response.json()));
+      await Promise.all(
+        responses.map(response => response.json())
+      );
 
     heroes = Array.isArray(heroesData)
       ? heroesData
@@ -83,41 +95,56 @@ async function loadDatabase() {
       ? changesData
       : changesData.records || [];
 
-    // Converte os registros novos para o formato usado pelo site
-    const importedChanges = changeRecords.map((record, index) => {
-      const valueChanges = record.value_changes || [];
+    // Converte os registros de changes.json
+    // para o formato usado pela interface.
+    const importedChanges = changeRecords.map(
+      (record, index) => {
+        const valueChanges = record.value_changes || [];
 
-      const values = valueChanges.map(change => ({
-        oldValue: change.old_value,
-        newValue: change.new_value,
-        text: change.text
-      }));
+        const values = valueChanges.map(change => ({
+          oldValue: change.old_value,
+          newValue: change.new_value,
+          text: change.text
+        }));
 
-      return {
-        id: `official-${index}-${makeId(record.hero)}-${record.date || ""}`,
-        hero: record.hero || "Herói não identificado",
-        heroId: makeId(record.hero),
-        date: record.date || "",
-        patch: record.patch_title || "Nota oficial",
-        title: record.patch_title || "Alteração",
-        ability: record.category === "hero_update"
-          ? "Balanceamento"
-          : "Atualização",
-        change: record.raw_text || "",
-        summary: record.raw_text || "",
-        oldValue: values.length ? values[0].oldValue : undefined,
-        newValue: values.length ? values[0].newValue : undefined,
-        valueChanges: values,
-        mode: "Overwatch",
-        source: record.source || "",
-        category: record.category || ""
-      };
-    });
+        return {
+          id: `official-${index}-${makeId(record.hero)}-${record.date || ""}`,
+          hero: record.hero || "Herói não identificado",
+          heroId: record.hero_id || makeId(record.hero),
+          date: record.date || "",
+          patch: record.patch_title || "Nota oficial",
+          title: record.patch_title || "Alteração",
 
-    // Combina o histórico antigo com os novos registros oficiais
+          ability: record.category === "hero_update"
+            ? "Balanceamento"
+            : "Atualização",
+
+          change: record.raw_text || "",
+          summary: record.raw_text || "",
+          oldValue: values.length
+            ? values[0].oldValue
+            : undefined,
+
+          newValue: values.length
+            ? values[0].newValue
+            : undefined,
+
+          valueChanges: values,
+
+          // Usa o modo encontrado pelo process.py.
+          mode: record.mode || "Overwatch",
+
+          source: record.source || "",
+          category: record.category || ""
+        };
+      }
+    );
+
+    // Junta os registros antigos e os novos.
     patches = [...patches, ...importedChanges];
 
-    // Inclui automaticamente heróis encontrados no histórico
+    // Adiciona automaticamente heróis que aparecem
+    // no histórico, mas ainda não estão em heroes.json.
     const knownHeroes = new Set(
       heroes.map(hero => normalize(hero.name))
     );
@@ -126,7 +153,9 @@ async function loadDatabase() {
       ...new Set(
         importedChanges
           .map(patch => patch.hero)
-          .filter(name => name && name !== "Herói não identificado")
+          .filter(name =>
+            name && name !== "Herói não identificado"
+          )
       )
     ];
 
@@ -139,6 +168,8 @@ async function loadDatabase() {
           abilities: [],
           history: []
         });
+
+        knownHeroes.add(normalize(name));
       }
     });
 
@@ -147,9 +178,11 @@ async function loadDatabase() {
 
   } catch (error) {
     heroesContainer.innerHTML = `
-      <p>Erro ao carregar o banco de dados.
-      Verifique se heroes.json, patches.json e changes.json
-      estão publicados na raiz do repositório.</p>
+      <p>
+        Erro ao carregar o banco de dados.
+        Verifique se heroes.json, patches.json e changes.json
+        estão publicados na raiz do repositório.
+      </p>
     `;
 
     console.error(error);
@@ -169,6 +202,7 @@ function getHeroHistory(hero) {
   );
 
   const combined = [...individualHistory, ...globalHistory];
+
   const unique = new Map();
 
   combined.forEach((patch, index) => {
@@ -180,8 +214,8 @@ function getHeroHistory(hero) {
     }
   });
 
-  return [...unique.values()].sort((a, b) =>
-    parseDate(b.date) - parseDate(a.date)
+  return [...unique.values()].sort(
+    (a, b) => parseDate(b.date) - parseDate(a.date)
   );
 }
 
@@ -202,6 +236,7 @@ function renderHeroes() {
   if (filteredHeroes.length === 0) {
     heroesContainer.innerHTML =
       "<p>Nenhum herói encontrado.</p>";
+
     return;
   }
 
@@ -245,6 +280,7 @@ function renderPatches() {
     patchesContainer.innerHTML = `
       <p>O histórico ainda não foi importado.</p>
     `;
+
     return;
   }
 
@@ -273,9 +309,11 @@ function renderPatches() {
           ${values.length ? `
             <div class="value-changes">
               <strong>Valores registrados:</strong>
+
               ${values.map(value => `
                 <p>
                   ${escapeHTML(value.text || "")}
+
                   ${value.oldValue !== undefined ||
                     value.newValue !== undefined ? `
                     <br>
@@ -333,6 +371,7 @@ function openHero(heroId) {
     modal = document.createElement("div");
     modal.id = "hero-modal";
     modal.className = "hero-modal";
+
     document.body.appendChild(modal);
   }
 
@@ -419,6 +458,7 @@ function renderHistory(history) {
             ${values.map(value => `
               <p>
                 ${escapeHTML(value.text || "")}
+
                 ${value.oldValue !== undefined ||
                   value.newValue !== undefined ? `
                   <br>
