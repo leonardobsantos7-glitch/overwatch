@@ -25,7 +25,7 @@ jobs:
       - name: Instalar dependências
         run: pip install -r requirements.txt
 
-      - name: Coletar patch notes oficiais
+      - name: Coletar patch notes e dados dos heróis
         run: python collect.py
 
       - name: Processar alterações por herói
@@ -35,6 +35,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add archive.json changes.json
+          git add archive.json changes.json heroes_data.json
           git diff --cached --quiet || git commit -m "Atualiza banco histórico de Overwatch"
           git push
