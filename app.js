@@ -6,6 +6,9 @@ const searchInput = document.querySelector("#search");
 let heroes = [];
 let patches = [];
 
+const OFFICIAL_HEROES_URL =
+  "https://overwatch.blizzard.com/pt-br/heroes/";
+
 const escapeHTML = (value = "") =>
   String(value).replace(/[&<>"']/g, char => ({
     "&": "&amp;",
@@ -24,6 +27,21 @@ const normalize = value =>
 
 const makeId = name =>
   normalize(name).replace(/[^a-z0-9]+/g, "-");
+
+// Gera o link oficial individual do herói.
+function getOfficialHeroUrl(hero) {
+  if (hero.officialUrl) {
+    return hero.officialUrl;
+  }
+
+  if (hero.source && hero.source.includes("/heroes/")) {
+    return hero.source;
+  }
+
+  const slug = hero.id || makeId(hero.name);
+
+  return `${OFFICIAL_HEROES_URL}${encodeURIComponent(slug)}/`;
+}
 
 function parseDate(date) {
   if (!date) return 0;
@@ -131,7 +149,6 @@ async function loadDatabase() {
 
           valueChanges: values,
 
-          // Usa o modo encontrado pelo process.py.
           mode: record.mode || "Overwatch",
 
           source: record.source || "",
@@ -143,8 +160,8 @@ async function loadDatabase() {
     // Junta os registros antigos e os novos.
     patches = [...patches, ...importedChanges];
 
-    // Adiciona automaticamente heróis que aparecem
-    // no histórico, mas ainda não estão em heroes.json.
+    // Adiciona heróis encontrados no histórico
+    // que ainda não estejam em heroes.json.
     const knownHeroes = new Set(
       heroes.map(hero => normalize(hero.name))
     );
@@ -165,7 +182,6 @@ async function loadDatabase() {
           id: makeId(name),
           name,
           role: "Não cadastrada",
-          abilities: [],
           history: []
         });
 
@@ -226,8 +242,7 @@ function renderHeroes() {
   const filteredHeroes = heroes.filter(hero => {
     const searchableText = [
       hero.name,
-      hero.role,
-      ...(hero.abilities || [])
+      hero.role
     ].join(" ");
 
     return normalize(searchableText).includes(query);
@@ -365,6 +380,8 @@ function openHero(heroId) {
     patch => patch.mode === "Stadium"
   );
 
+  const officialUrl = getOfficialHeroUrl(hero);
+
   let modal = document.querySelector("#hero-modal");
 
   if (!modal) {
@@ -390,17 +407,17 @@ function openHero(heroId) {
       <h2>${escapeHTML(hero.name)}</h2>
 
       <p>
-        Lançamento:
-        ${escapeHTML(hero.release || "Data não cadastrada")}
+        Quer conhecer as habilidades e outras informações
+        deste herói?
       </p>
 
-      <h3>Habilidades</h3>
-
-      <ul>
-        ${(hero.abilities || []).map(ability => `
-          <li>${escapeHTML(ability)}</li>
-        `).join("") || "<li>Dados ainda não cadastrados.</li>"}
-      </ul>
+      <a class="official-hero-link"
+         href="${escapeHTML(officialUrl)}"
+         target="_blank"
+         rel="noopener noreferrer">
+        Ver informações oficiais do herói
+        ↗
+      </a>
 
       <h3>Histórico de Overwatch</h3>
       ${renderHistory(normalHistory)}
