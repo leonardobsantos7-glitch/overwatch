@@ -2,12 +2,12 @@
 import json
 import re
 import unicodedata
+from datetime import date
 from pathlib import Path
 
 INPUT_FILE = Path("archive.json")
 OUTPUT_FILE = Path("changes.json")
 
-# Nomes oficiais e algumas variações encontradas nas notas em português.
 HEROES = [
     "Ana", "Anran", "Ashe", "Baptiste", "Bastion",
     "Brigitte", "Cassidy", "D.Va", "D.Mon", "Domina",
@@ -22,37 +22,39 @@ HEROES = [
     "Wuyang", "Zarya", "Zenyatta"
 ]
 
-# Variações de nomes que aparecem em notas antigas.
 ALIASES = {
     "McCree": "Cassidy",
-    "Soldier: 76": "Soldado: 76",
+    "Soldier:  76": "Soldado: 76",
+    "Soldier:76": "Soldado: 76",
     "Soldier 76": "Soldado: 76",
-    "Lúcio": "Lúcio",
     "Lucio": "Lúcio",
     "Torbjorn": "Torbjörn",
-    "Wrecking Ball": "Wrecking Ball",
     "Life Weaver": "Lifeweaver",
+    "Jetpack Cat": "Jetpackcat",
+    "Junkerqueen": "Junker Queen",
+    "D.Mon": "D.Mon",
 }
 
 
 def normalize(text):
-    """Normaliza acentos, espaços e maiúsculas para comparar títulos."""
-    text = unicodedata.normalize("NFKD", text)
-    text = "".join(c for c in text if not unicodedata.combining(c))
+    text = unicodedata.normalize("NFKD", str(text or ""))
+    text = "".join(
+        char for char in text
+        if not unicodedata.combining(char)
+    )
     return re.sub(r"\s+", " ", text).strip().casefold()
 
 
-HERO_LOOKUP = {}
-
-for hero in HEROES:
-    HERO_LOOKUP[normalize(hero)] = hero
+HERO_LOOKUP = {
+    normalize(hero): hero
+    for hero in HEROES
+}
 
 for alias, canonical in ALIASES.items():
     HERO_LOOKUP[normalize(alias)] = canonical
 
 
 def canonical_hero(line):
-    """Retorna o nome oficial se a linha for exatamente um nome de herói."""
     return HERO_LOOKUP.get(normalize(line))
 
 
@@ -66,8 +68,8 @@ def clean_lines(text):
 
 def split_articles(text):
     """
-    Divide o texto mensal em artigos usando títulos e datas
-    das notas de atualização.
+    Divide o conteúdo mensal em artigos, usando títulos
+    e datas das notas oficiais.
     """
     lines = clean_lines(text)
     articles = []
@@ -84,55 +86,54 @@ def split_articles(text):
     )
 
     title_pattern = re.compile(
-        r"^Notas de atualização de Overwatch",
+        r"^(Notas de atualização de Overwatch|"
+        r"Atualização de Overwatch)",
         re.IGNORECASE
     )
 
+    def save_article():
+        if current:
+            articles.append({
+                "date": current_date,
+                "title": current_title,
+                "lines": current.copy()
+            })
+
     for line in lines:
         if date_pattern.match(line):
-            if current:
-                articles.append({
-                    "date": current_date,
-                    "title": current_title,
-                    "lines": current
-                })
+            save_article()
             current = []
             current_date = line
 
         elif title_pattern.match(line):
-            if current and current_title:
-                articles.append({
-                    "date": current_date,
-                    "title": current_title,
-                    "lines": current
-                })
+            if current:
+                save_article()
                 current = []
+
             current_title = line
             current.append(line)
 
         elif current_title:
             current.append(line)
 
-    if current:
-        articles.append({
-            "date": current_date,
-            "title": current_title,
-            "lines": current
-        })
-
+    save_article()
     return articles
 
 
 def extract_value_changes(text):
-    """Extrai pares de valores quando a nota usa de X para Y."""
+    """
+    Extrai frases com valores alterados.
+    Mantém o texto original quando não há par numérico.
+    """
     patterns = [
-        r"(?:aumentad[oa]s?|reduzid[oa]s?|alterad[oa]s?)"
-        r"\s+de\s+(.+?)\s+para\s+(.+?)(?:[.!;]|$)",
-
-        r"(?:passou|passaram)\s+de\s+(.+?)\s+para\s+(.+?)(?:[.!;]|$)",
-
-        r"(?:aumentad[oa]s?|reduzid[oa]s?)"
-        r"\s+em\s+(.+?)(?:[.!;]|$)"
+        (
+            r"(?:aumentad[oa]s?|reduzid[oa]s?|alterad[oa]s?)"
+            r"\s+de\s+(.+?)\s+para\s+(.+?)(?:[.!;]|$)"
+        ),
+        (
+            r"(?:passou|passaram)\s+de\s+(.+?)"
+            r"\s+para\s+(.+?)(?:[.!;]|$)"
+        ),
     ]
 
     results = []
@@ -143,82 +144,109 @@ def extract_value_changes(text):
         for pattern in patterns:
             match = re.search(pattern, line, re.IGNORECASE)
 
-            if not match:
-                continue
-
-            if len(match.groups()) == 2:
+            if match:
                 results.append({
                     "old_value": match.group(1).strip(),
                     "new_value": match.group(2).strip(),
                     "text": line
                 })
-            else:
-                results.append({
-                    "old_value": None,
-                    "new_value": None,
-                    "text": line
-                })
-
-            break
+                break
 
     return results
 
 
+# Cabeçalhos que iniciam seções de alterações
+NORMAL_HEADERS = {
+    normalize("Heróis"),
+    normalize("Atualizações dos heróis"),
+    normalize("Atualizações de heróis"),
+    normalize("Atualizações dos Heróis"),
+}
+
+STADIUM_HEADERS = {
+    normalize("Estádio"),
+    normalize("Atualizações do Estádio"),
+    normalize("Atualizações de Estádio"),
+    normalize("Atualizações do Estadio"),
+    normalize("Correções de bugs do Estádio"),
+    normalize("Correções de bugs do Estadio"),
+}
+
+# Cabeçalhos que encerram uma seção de heróis
+END_HEADERS = {
+    normalize("Correção de bugs"),
+    normalize("Correções de bugs"),
+    normalize("Correções de bugs gerais"),
+    normalize("Atualizações Gerais"),
+    normalize("Atualizações gerais"),
+    normalize("Atualizações de mapas"),
+    normalize("Mapas"),
+    normalize("Geral"),
+    normalize("Workshop"),
+    normalize("Atualizações no Jogo Competitivo"),
+    normalize("Atualizações de eventos"),
+    normalize("Atualizações do Arcade"),
+    normalize("Atualizações de jogabilidade"),
+    normalize("Tanque"),
+    normalize("Dano"),
+    normalize("Suporte"),
+}
+
+
 def extract_hero_blocks(article):
     """
-    Localiza seções de heróis dentro de um artigo.
-    Guarda o bloco completo de cada herói para não perder contexto.
+    Extrai os blocos de cada herói e identifica o modo
+    pelo cabeçalho da seção em que aparecem.
     """
     lines = article["lines"]
     blocks = []
 
-    in_hero_section = False
+    active = False
+    mode = None
     current_hero = None
     current_lines = []
 
-    section_headers = {
-        normalize("Atualizações dos heróis"),
-        normalize("Atualizações de heróis"),
-        normalize("Atualizações dos Heróis"),
-        normalize("Atualizações dos heróis - Stadium"),
-    }
-
-    end_headers = {
-        normalize("Correções de bugs"),
-        normalize("Atualizações Gerais"),
-        normalize("Atualizações gerais"),
-        normalize("Mapas"),
-        normalize("Geral"),
-        normalize("Workshop"),
-        normalize("Atualizações no Jogo Competitivo"),
-        normalize("Atualizações Gerais"),
-    }
-
     def save_current():
         if current_hero and current_lines:
-            blocks.append({
-                "hero": current_hero,
-                "raw_text": "\n".join(current_lines)
-            })
+            raw_text = "\n".join(current_lines).strip()
+
+            if raw_text:
+                blocks.append({
+                    "hero": current_hero,
+                    "mode": mode,
+                    "raw_text": raw_text
+                })
 
     for line in lines:
         normalized_line = normalize(line)
 
-        if normalized_line in section_headers:
+        # Stadium tem prioridade, pois pode aparecer dentro
+        # das notas normais de Overwatch.
+        if normalized_line in STADIUM_HEADERS:
             save_current()
             current_hero = None
             current_lines = []
-            in_hero_section = True
+            mode = "Stadium"
+            active = True
             continue
 
-        if in_hero_section and normalized_line in end_headers:
+        if normalized_line in NORMAL_HEADERS:
             save_current()
             current_hero = None
             current_lines = []
-            in_hero_section = False
+            mode = "Overwatch"
+            active = True
             continue
 
-        if not in_hero_section:
+        if active and normalized_line in END_HEADERS:
+            save_current()
+            current_hero = None
+            current_lines = []
+            active = False
+            mode = None
+            continue
+
+        if not active:
             continue
 
         hero = canonical_hero(line)
@@ -242,7 +270,9 @@ def main():
             "archive.json não encontrado na raiz do repositório."
         )
 
-    database = json.loads(INPUT_FILE.read_text(encoding="utf-8"))
+    database = json.loads(
+        INPUT_FILE.read_text(encoding="utf-8")
+    )
 
     records = []
     seen = set()
@@ -254,13 +284,15 @@ def main():
         for article in split_articles(month_text):
             for block in extract_hero_blocks(article):
                 hero = block["hero"]
-                raw_text = block["raw_text"].strip()
+                mode = block["mode"]
+                raw_text = block["raw_text"]
 
                 if not raw_text:
                     continue
 
                 key = (
                     hero,
+                    mode,
                     article.get("date"),
                     article.get("title"),
                     raw_text
@@ -271,29 +303,42 @@ def main():
 
                 seen.add(key)
 
-                value_changes = extract_value_changes(raw_text)
-
                 records.append({
                     "hero": hero,
+                    "hero_id": normalize(hero),
+                    "mode": mode,
                     "date": article.get("date"),
                     "patch_title": article.get("title"),
                     "source": source_url,
                     "raw_text": raw_text,
-                    "value_changes": value_changes,
+                    "value_changes": extract_value_changes(raw_text),
                     "category": "hero_update"
                 })
 
     records.sort(
         key=lambda item: (
+            item.get("date") or "",
             item.get("hero") or "",
-            item.get("date") or ""
+            item.get("mode") or ""
         )
+    )
+
+    stadium_count = sum(
+        1 for record in records
+        if record["mode"] == "Stadium"
+    )
+
+    overwatch_count = sum(
+        1 for record in records
+        if record["mode"] == "Overwatch"
     )
 
     result = {
         "source": "Blizzard official Overwatch patch notes",
-        "generated_at": __import__("datetime").date.today().isoformat(),
+        "generated_at": date.today().isoformat(),
         "total_records": len(records),
+        "total_overwatch_records": overwatch_count,
+        "total_stadium_records": stadium_count,
         "records": records
     }
 
@@ -302,19 +347,21 @@ def main():
         encoding="utf-8"
     )
 
-    print(f"Registros encontrados: {len(records)}")
+    print(f"Total de registros: {len(records)}")
+    print(f"Overwatch: {overwatch_count}")
+    print(f"Stadium: {stadium_count}")
     print(f"Arquivo criado: {OUTPUT_FILE.resolve()}")
 
     counts = {}
 
     for record in records:
-        hero = record["hero"]
-        counts[hero] = counts.get(hero, 0) + 1
+        key = (record["hero"], record["mode"])
+        counts[key] = counts.get(key, 0) + 1
 
-    print("\nRegistros por herói:")
+    print("\nRegistros por herói e modo:")
 
-    for hero, count in sorted(counts.items()):
-        print(f"{hero}: {count}")
+    for (hero, mode), count in sorted(counts.items()):
+        print(f"{hero} | {mode}: {count}")
 
 
 if __name__ == "__main__":
