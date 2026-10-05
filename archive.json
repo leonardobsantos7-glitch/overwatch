@@ -1,8 +1,14 @@
 {
   "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live",
   "updated_at": "2026-10-05",
-  "total_months": 126,
-  "failed_months": [],
+  "total_months": 125,
+  "failed_months": [
+    {
+      "year": 2021,
+      "month": 12,
+      "error": "502 Server Error: Bad Gateway for url: https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2021/12/"
+    }
+  ],
   "archives": [
     {
       "year": 2016,
@@ -472,13 +478,6 @@
       "url": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2021/11/",
       "title": "Overwatch - Notas do Patch",
       "text": "Notas do Patch\n2026\n2025\n2024\n2023\n2022\n2021\n2020\n2019\n2018\n2017\n2016\nJan\nFev\nMar\nAbr\nMai\nJun\nJul\nAgo\nSet\nOut\nNov\nDez\n9 de novembro de 2021\nNotas de atualização de Overwatch – 9 de novembro de 2021\nDESAFIO SANGUE NOVO DO CASSIDY\nComemore o lançamento de SANGUE NOVO, o novo quadrinho de Overwatch escrito por Ray Fawkes, com o Desafio Sangue Novo do Cassidy! Até 23 de novembro, ganhe recompensas por tempo limitado, incluindo o novo visual épico Tempestade de Areia, ao jogar Overwatch e assistir a transmissões na Twitch.\nSaiba mais sobre o Desafio Sangue Novo do Cassidy no site de Overwatch.\nCORREÇÕES DE BUGS\nGERAL\nCorrigimos o problema que permitia que jogadores de console entrassem em partidas personalizadas de jogadores de PC que os bloquearam\nCorrigimos um problema que podia fazer com que aliados fossem alvejados assim que reapareciam\nHERÓIS\nAna\nCorrigimos o problema que exibia legendas vazias para a fala “não”\nBrigitte\nCorrigimos o problema que podia fazer o mangual ficar transparente ao reaparecer\nGenji\nCorrigimos o problema que permitia o uso do Golpe Veloz em algumas geometrias de King’s Row\nMei\nCorrigimos o problema que podia impedir o congelamento de inimigos durante a Nevasca\nMoira\nCorrigimos o problema que fazia o emote “Bu” se comportar incorretamente com alguns objetos\nReinhardt\nCorrigimos o problema que reproduzia sons de martelo em vez de machado quando o visual Draugr estava equipado\nSymmetra\nCorrigimos o problema que impedia que o teletransportador fosse colocado próximo a alambiques em Havana\nCorrigimos o problema que podia fazer as torres serem destruídas automaticamente em vez de se transportarem\nMAPAS\nKing's Row\nCorrigimos o problema que permitia que certos heróis ficassem em locais indevidos no caminho da carga\nKanezaka\nCorrigimos um problema que permitia que jogadores agarrassem locais indevidos do mapa\nTopo da publicação\nNotas de atualização de Dez.\nDez.\nNotas de atualização de Out.\nOut.\nNotas de atualização em vigor\nEstas notas de atualização apresentam as alterações gerais feitas na versão final de Overwatch. As mudanças de balanceamento mencionadas afetam Jogo Rápido, Jogo Competitivo, Arcade e Jogos Personalizados.\nFórum de Discussão Geral\nFórum de Relatório de Bugs\nFórum de Suporte Técnico"
-    },
-    {
-      "year": 2021,
-      "month": 12,
-      "url": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2021/12/",
-      "title": "Overwatch - Notas do Patch",
-      "text": "Notas do Patch\n2026\n2025\n2024\n2023\n2022\n2021\n2020\n2019\n2018\n2017\n2016\nJan\nFev\nMar\nAbr\nMai\nJun\nJul\nAgo\nSet\nOut\nNov\nDez\n16 de dezembro de 2021\nNotas de atualização de Overwatch – 16 de dezembro de 2021\nEvento de Temporada: Paraíso Congelado 2021\nO Paraíso Congelado está de volta com alguns queridinhos da estação! Desembrulhe novos itens cosméticos, ganhe recompensas semanais e brinque na neve com as nossas Contendas Congeladas!\nChegou a época das Caixas de Itens Congelados. Desbloqueie novos itens de temporada, incluindo visuais lendários como Wrecking Ball Boneco de Neve, Genji Espectro do Gelo e D.Va No Trenó, além de diversos novos itens natalinos.\nSaiba mais sobre o Paraíso Congelado em playoverwatch.com.\nTemporada 2 do Competitivo Sem Limites\nA Temporada 2 do Competitivo Sem Limites já começou!\nCorreções de bugs\nGeral\nCorrigimos um problema que fazia com que alguns jogadores ficassem presos na tela de Seleção de Herói depois que um ponto era capturado\nCorrigimos um problema que deixava o cliente de alguns jogadores sem som ao trocar os dispositivos de áudio\nCorrigimos um problema que impedia que alguns jogadores voltassem ao bate-papo de voz\nMapas\nCorrigimos uma trapaça que se aproveitava da geometria em Numbani. Agora o mapa já pode ser jogado no Competitivo e no Jogo Rápido.\nCorrigimos uma trapaça que se aproveitava da geometria em Observatório: Gibraltar. Agora o mapa já pode ser jogado no Competitivo e no Jogo Rápido.\nTopo da publicação\nNotas de atualização de Jan.\nJan.\nNotas de atualização de Nov.\nNov.\nNotas de atualização em vigor\nEstas notas de atualização apresentam as alterações gerais feitas na versão final de Overwatch. As mudanças de balanceamento mencionadas afetam Jogo Rápido, Jogo Competitivo, Arcade e Jogos Personalizados.\nFórum de Discussão Geral\nFórum de Relatório de Bugs\nFórum de Suporte Técnico"
     },
     {
       "year": 2022,
