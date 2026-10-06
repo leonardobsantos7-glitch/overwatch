@@ -1,8 +1,8 @@
 {
   "source": "Blizzard official Overwatch patch notes",
   "generated_at": "2026-10-06",
-  "total_records": 1727,
-  "total_overwatch_records": 1526,
+  "total_records": 1779,
+  "total_overwatch_records": 1578,
   "total_stadium_records": 201,
   "records": [
     {
@@ -22064,6 +22064,1243 @@
       "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2025/11/",
       "raw_text": "A tática do Disparo Disruptivo da Sojourn não valia o investimento, então não era justificável na maioria das partidas. Reduzimos o preço geral da tática e melhoramos as opções defensivas dela com fortalecimentos à Deslizada Enérgica, oferecendo mais flexibilidade para ela se reposicionar e ficar mais tempo em combate.\nSuperadesão – Poder\nRedução de dano reduzida para 25% (era 50%).\nDados Logísticos da Liao – Item de Herói de Habilidade Épico\nCusto reduzido para 10.000 (era 11.000).\nAbsorção de Energia – Item de Herói de Habilidade Raro\nCusto reduzido para 4.000 (era 5.000).\nPropulsores Turbinados – Poder\nRedução de dano aumentada para 35% (era 25%).\nZum-zum-zum – Poder\nVelocidade de ataque aumentada para 35% (era 25%).\nRoubo de Vida com Arma aumentado para 100% (era 50%).\nProtótipos – Poder\nLentidão aumentada para 25% (era 15%).\nCarga do Canhão Elétrico aumentada para 50% (era 33%).",
       "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Ana",
+      "hero_id": "ana",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Comentário dos desenvolvedores: Grogue era útil nas situações certas, mas de modo geral, teve um desempenho abaixo do esperado em comparação ao outro aprimoramento secundário. Anestésico Local aumenta a utilidade do Dardo Sonífero permitindo que ele afete inimigos próximos, criando usos novos além de atingir um único alvo.\nGrogue – Aprimoramento Secundário\nRemovido.\nAnestésico Local\nNovo.\nDardo Sonífero explode no impacto, desacelerando inimigos e causando 45 de dano ao longo de 3 s.\nDoctrine\nComentário dos desenvolvedores: o Doctrine foi bem recebido durante o fim de semana de teste, mas estava superando outros suportes. Estes ajustes equilibram diversos aspectos das habilidades dele, mas sem perder o fluxo de jogabilidade. Os efeitos de Libertação agora são aplicados mais rápido, mas por um período mais curto, reduzindo o tempo que aliados e inimigos são afetados.\nCusto da habilidade suprema aumentado em 8%.\nTransfusão – Aprimoramento Principal\nDano e taxa de conversão de cura reduzidas em 50%.\nDrones Revigorantes\nVelocidade de ataque reduzida para 30% (era 35%).\nImpulso Oculto\nTempo de recarga aumentado de 7 para 8 s.\nRedução de dano reduzida de 50% para 40%.\nNão concede mais imunidade a golpes críticos enquanto estiver ativo.\nLibertação\nCadência de tiro aumentada de 4 para 5 disparos.\nDuração de vida extra e penalidade reduzidas de 8 para 6 s.\nDuração de decaimento reduzida de 5 para 4 s.",
+      "value_changes": [
+        {
+          "old_value": "7",
+          "new_value": "8 s",
+          "text": "Tempo de recarga aumentado de 7 para 8 s."
+        },
+        {
+          "old_value": "50%",
+          "new_value": "40%",
+          "text": "Redução de dano reduzida de 50% para 40%."
+        },
+        {
+          "old_value": "4",
+          "new_value": "5 disparos",
+          "text": "Cadência de tiro aumentada de 4 para 5 disparos."
+        },
+        {
+          "old_value": "8",
+          "new_value": "6 s",
+          "text": "Duração de vida extra e penalidade reduzidas de 8 para 6 s."
+        },
+        {
+          "old_value": "5",
+          "new_value": "4 s",
+          "text": "Duração de decaimento reduzida de 5 para 4 s."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Ana",
+      "hero_id": "ana",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 16,9 para 18.",
+      "value_changes": [
+        {
+          "old_value": "16,9",
+          "new_value": "18",
+          "text": "Volume de acerto na cabeça aumentado de 16,9 para 18."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Anran",
+      "hero_id": "anran",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 15,2 para 17.\nVolume de acerto no torso aumentado de 18 para 23.\nVolume de acerto na perna aumentado de 14,7 para 19.",
+      "value_changes": [
+        {
+          "old_value": "15,2",
+          "new_value": "17",
+          "text": "Volume de acerto na cabeça aumentado de 15,2 para 17."
+        },
+        {
+          "old_value": "18",
+          "new_value": "23",
+          "text": "Volume de acerto no torso aumentado de 18 para 23."
+        },
+        {
+          "old_value": "14,7",
+          "new_value": "19",
+          "text": "Volume de acerto na perna aumentado de 14,7 para 19."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Anran",
+      "hero_id": "anran",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Corrigimos um problema que fazia Clarão Dançante não ativar alguns desafios relacionados à cura.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Ashe",
+      "hero_id": "ashe",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto no torso aumentado de 22,4 para 25.\nVolume de acerto na perna aumentado de 16,7 para 19.",
+      "value_changes": [
+        {
+          "old_value": "22,4",
+          "new_value": "25",
+          "text": "Volume de acerto no torso aumentado de 22,4 para 25."
+        },
+        {
+          "old_value": "16,7",
+          "new_value": "19",
+          "text": "Volume de acerto na perna aumentado de 16,7 para 19."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Baptiste",
+      "hero_id": "baptiste",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 15,1 para 16.",
+      "value_changes": [
+        {
+          "old_value": "15,1",
+          "new_value": "16",
+          "text": "Volume de acerto na cabeça aumentado de 15,1 para 16."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Bastion",
+      "hero_id": "bastion",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Comentário dos desenvolvedores: com Reconfigurar, o Bastion faz pressão constante por longos períodos. Reduzimos a duração desta habilidade para dar mais ênfase ao tempo, mas preservando o impacto geral.\nReconfigurar\nDuração reduzida de 6 para 5 s.",
+      "value_changes": [
+        {
+          "old_value": "6",
+          "new_value": "5 s",
+          "text": "Duração reduzida de 6 para 5 s."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Bastion",
+      "hero_id": "bastion",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 20 para 21,5.\nVolume de acerto na metralhadora das costas reduzido de 20 para 18.\nVolume de acerto no antebraço reduzido de 20 para 15.",
+      "value_changes": [
+        {
+          "old_value": "20",
+          "new_value": "21,5",
+          "text": "Volume de acerto na cabeça aumentado de 20 para 21,5."
+        },
+        {
+          "old_value": "20",
+          "new_value": "18",
+          "text": "Volume de acerto na metralhadora das costas reduzido de 20 para 18."
+        },
+        {
+          "old_value": "20",
+          "new_value": "15",
+          "text": "Volume de acerto no antebraço reduzido de 20 para 15."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Cassidy",
+      "hero_id": "cassidy",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Comentário dos desenvolvedores: Cabo de Resgate cria interações únicas em diversas habilidades supremas, mas a combinação com Tiro Certeiro é forte demais, reposicionando o Cassidy para eliminar alvos. Agora, Tiro Certeiro impede que Cassidy se prenda ao Cabo de Resgate. Continuaremos avaliando outras interações caso a caso.\nTiro Certeiro\nAgora impede de se prender ao Cabo de Resgate da Jetpack Cat.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Cassidy",
+      "hero_id": "cassidy",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto no torso reduzido de 37 para 33.\nVolumes de acerto na perna reduzido de 24 para 22.",
+      "value_changes": [
+        {
+          "old_value": "37",
+          "new_value": "33",
+          "text": "Volume de acerto no torso reduzido de 37 para 33."
+        },
+        {
+          "old_value": "24",
+          "new_value": "22",
+          "text": "Volumes de acerto na perna reduzido de 24 para 22."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "D.Va",
+      "hero_id": "d.va",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Comentário dos desenvolvedores: aumentar a cadência de tiro dos Micromísseis reduz o tempo necessário para disparar a saraivada total, aumentando o potencial explosivo sem aumentar o dano causado total.\nMicromísseis\nCadência de tiro aumentada de 11 para 14 disparos por segundo.",
+      "value_changes": [
+        {
+          "old_value": "11",
+          "new_value": "14 disparos por segundo",
+          "text": "Cadência de tiro aumentada de 11 para 14 disparos por segundo."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Domina",
+      "hero_id": "domina",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Comentário dos desenvolvedores: a Domina tem dificuldade de enfrentar oponentes que fazem pressão constante através da barreira dela. Reduzir o tempo de recarga da Carga Cristalina e aumentar o roubo de vida de Reconstrução melhora a habilidade dela de recuperar vida em confrontos longos.\nCarga Cristalina\nTempo de recarga reduzido de 8 para 7 s.\nReconstrução (Passiva)\nRoubo de vida com habilidade aumentada de 75% para 100%.\nDano",
+      "value_changes": [
+        {
+          "old_value": "8",
+          "new_value": "7 s",
+          "text": "Tempo de recarga reduzido de 8 para 7 s."
+        },
+        {
+          "old_value": "75%",
+          "new_value": "100%",
+          "text": "Roubo de vida com habilidade aumentada de 75% para 100%."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Doomfist",
+      "hero_id": "doomfist",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 19,7 para 21.\nVolume de acerto na cintura aumentado de 30 para 35.\nVolume de acerto na perna aumentado de 21 para 26.\nVolume de acerto no pulso reduzido de 24 para 20.",
+      "value_changes": [
+        {
+          "old_value": "19,7",
+          "new_value": "21",
+          "text": "Volume de acerto na cabeça aumentado de 19,7 para 21."
+        },
+        {
+          "old_value": "30",
+          "new_value": "35",
+          "text": "Volume de acerto na cintura aumentado de 30 para 35."
+        },
+        {
+          "old_value": "21",
+          "new_value": "26",
+          "text": "Volume de acerto na perna aumentado de 21 para 26."
+        },
+        {
+          "old_value": "24",
+          "new_value": "20",
+          "text": "Volume de acerto no pulso reduzido de 24 para 20."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Echo",
+      "hero_id": "echo",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 15,9 para 18.\nVolume de acerto na perna aumentado de 14,6 para 20.",
+      "value_changes": [
+        {
+          "old_value": "15,9",
+          "new_value": "18",
+          "text": "Volume de acerto na cabeça aumentado de 15,9 para 18."
+        },
+        {
+          "old_value": "14,6",
+          "new_value": "20",
+          "text": "Volume de acerto na perna aumentado de 14,6 para 20."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Emre",
+      "hero_id": "emre",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Comentário dos desenvolvedores: Emre causa bastante dano, mas tem dificuldade de realizar eliminações certeiras. Reduzir o tempo de recarga da Cibergranada aumenta a disponibilidade dela e cria mais oportunidades de aproveitar o dano explosivo dela.\nCibergranada\nTempo de recarga reduzido de 10 para 9 s.",
+      "value_changes": [
+        {
+          "old_value": "10",
+          "new_value": "9 s",
+          "text": "Tempo de recarga reduzido de 10 para 9 s."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Emre",
+      "hero_id": "emre",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 16 para 18.\nVolume de acerto na perna aumentado de 17,5 para 20.",
+      "value_changes": [
+        {
+          "old_value": "16",
+          "new_value": "18",
+          "text": "Volume de acerto na cabeça aumentado de 16 para 18."
+        },
+        {
+          "old_value": "17,5",
+          "new_value": "20",
+          "text": "Volume de acerto na perna aumentado de 17,5 para 20."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Emre",
+      "hero_id": "emre",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Corrigimos as reduções de velocidade de recarga acumuladas duas vezes no Rifle de Rajada Sintética.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Freja",
+      "hero_id": "freja",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Corrigimos as reduções de velocidade de recarga, que não eram aplicadas à Besta Célere.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Genji",
+      "hero_id": "genji",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Comentário dos desenvolvedores: aumentamos o dano do Golpe Veloz para que o Genji possa garantir mais eliminações com combos. Também fizemos mudanças na Lâmina do Dragão para evitar os pontos decisivos de reforço de dano criados pelo aumento do Golpe Veloz, e melhoramos sua eficácia geral.\nGolpe Veloz\nDano aumentado de 50 para 60.\nLâmina do Dragão\nDano reduzido de 110 para 100.\nVelocidade do golpe aumentada em 15%.",
+      "value_changes": [
+        {
+          "old_value": "50",
+          "new_value": "60",
+          "text": "Dano aumentado de 50 para 60."
+        },
+        {
+          "old_value": "110",
+          "new_value": "100",
+          "text": "Dano reduzido de 110 para 100."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Hanzo",
+      "hero_id": "hanzo",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 16 para 18.\nHazard\nVolume de acerto na cabeça aumentado de 18,5 para 20.\nVolume de acerto na perna aumentado de 21,9 para 24.",
+      "value_changes": [
+        {
+          "old_value": "16",
+          "new_value": "18",
+          "text": "Volume de acerto na cabeça aumentado de 16 para 18."
+        },
+        {
+          "old_value": "18,5",
+          "new_value": "20",
+          "text": "Volume de acerto na cabeça aumentado de 18,5 para 20."
+        },
+        {
+          "old_value": "21,9",
+          "new_value": "24",
+          "text": "Volume de acerto na perna aumentado de 21,9 para 24."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Hanzo",
+      "hero_id": "hanzo",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Corrigimos um problema que fazia Golpe do Dragão contar como dano de arma em desafios.\nCorrigimos um problema que fazia com que Flechas da Tempestade não contabilizasse o dano corretamente em desafios.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Illari",
+      "hero_id": "illari",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 14,9 para 18.\nVolume de acerto no torso aumentado de 20 para 23,5.",
+      "value_changes": [
+        {
+          "old_value": "14,9",
+          "new_value": "18",
+          "text": "Volume de acerto na cabeça aumentado de 14,9 para 18."
+        },
+        {
+          "old_value": "20",
+          "new_value": "23,5",
+          "text": "Volume de acerto no torso aumentado de 20 para 23,5."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Jetpackcat",
+      "hero_id": "jetpackcat",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 15,8 para 18,5.\nVolume de acerto no torso aumentado de 14,8 para 17.\nVolume de acerto na cintura aumentado de 19,5 para 26.\nVolume de acerto na perna aumentado de 9,7 para 12.\nRainha Junker\nVolume de acerto na cabeça aumentado de 17,8 para 19.\nVolume de acerto no torso aumentado de 26,2 para 28.\nVolume de acerto na cintura aumentado de 23,8 para 26.\nVolume de acerto na perna aumentado de 19,2 para 22.",
+      "value_changes": [
+        {
+          "old_value": "15,8",
+          "new_value": "18,5",
+          "text": "Volume de acerto na cabeça aumentado de 15,8 para 18,5."
+        },
+        {
+          "old_value": "14,8",
+          "new_value": "17",
+          "text": "Volume de acerto no torso aumentado de 14,8 para 17."
+        },
+        {
+          "old_value": "19,5",
+          "new_value": "26",
+          "text": "Volume de acerto na cintura aumentado de 19,5 para 26."
+        },
+        {
+          "old_value": "9,7",
+          "new_value": "12",
+          "text": "Volume de acerto na perna aumentado de 9,7 para 12."
+        },
+        {
+          "old_value": "17,8",
+          "new_value": "19",
+          "text": "Volume de acerto na cabeça aumentado de 17,8 para 19."
+        },
+        {
+          "old_value": "26,2",
+          "new_value": "28",
+          "text": "Volume de acerto no torso aumentado de 26,2 para 28."
+        },
+        {
+          "old_value": "23,8",
+          "new_value": "26",
+          "text": "Volume de acerto na cintura aumentado de 23,8 para 26."
+        },
+        {
+          "old_value": "19,2",
+          "new_value": "22",
+          "text": "Volume de acerto na perna aumentado de 19,2 para 22."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Junkrat",
+      "hero_id": "junkrat",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto no torso reduzido de 32 para 29.\nVolume de acerto na perna aumentado de 17,3 para 20.",
+      "value_changes": [
+        {
+          "old_value": "32",
+          "new_value": "29",
+          "text": "Volume de acerto no torso reduzido de 32 para 29."
+        },
+        {
+          "old_value": "17,3",
+          "new_value": "20",
+          "text": "Volume de acerto na perna aumentado de 17,3 para 20."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Junkrat",
+      "hero_id": "junkrat",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Corrigimos as reduções de velocidade de recarga acumuladas duas vezes no Lançador de Granadas.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Juno",
+      "hero_id": "juno",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto no torso aumentado de 19 para 23.\nVolumes de acerto na mão reduzidos de 8,5 para 5.\nVolumes de acerto no braço reduzidos de 9 para 7.",
+      "value_changes": [
+        {
+          "old_value": "19",
+          "new_value": "23",
+          "text": "Volume de acerto no torso aumentado de 19 para 23."
+        },
+        {
+          "old_value": "8,5",
+          "new_value": "5",
+          "text": "Volumes de acerto na mão reduzidos de 8,5 para 5."
+        },
+        {
+          "old_value": "9",
+          "new_value": "7",
+          "text": "Volumes de acerto no braço reduzidos de 9 para 7."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Kiriko",
+      "hero_id": "kiriko",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 14,9 para 16.\nVolume de acerto no torso aumentado de 17,7 para 21.",
+      "value_changes": [
+        {
+          "old_value": "14,9",
+          "new_value": "16",
+          "text": "Volume de acerto na cabeça aumentado de 14,9 para 16."
+        },
+        {
+          "old_value": "17,7",
+          "new_value": "21",
+          "text": "Volume de acerto no torso aumentado de 17,7 para 21."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Lifeweaver",
+      "hero_id": "lifeweaver",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 14,8 para 17.\nVolume de acerto no torso aumentado de 19,7 para 25.\nVolume de acerto na perna aumentado de 15,5 para 19.\nVolume de acerto na cintura aumentado de 15,9 para 20.",
+      "value_changes": [
+        {
+          "old_value": "14,8",
+          "new_value": "17",
+          "text": "Volume de acerto na cabeça aumentado de 14,8 para 17."
+        },
+        {
+          "old_value": "19,7",
+          "new_value": "25",
+          "text": "Volume de acerto no torso aumentado de 19,7 para 25."
+        },
+        {
+          "old_value": "15,5",
+          "new_value": "19",
+          "text": "Volume de acerto na perna aumentado de 15,5 para 19."
+        },
+        {
+          "old_value": "15,9",
+          "new_value": "20",
+          "text": "Volume de acerto na cintura aumentado de 15,9 para 20."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Lúcio",
+      "hero_id": "lucio",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Comentário dos desenvolvedores: mudanças anteriores reduziram a eficácia da Barreira de Som mais do que gostaríamos. A duração do decaimento da vida extra da Barreira foi revertida, mas mantivemos a quantidade de vida extra reduzida. Também ajustamos A Batida e reduzimos a duração dela para que não fique ligada diretamente à duração geral da Barreira de Som.\nA Batida – Aprimoramento Secundário\nSolta o Som agora fica ativo por 4 s após o uso da Barreira de Som.\nBarreira de Som\nDuração aumentada de 5 para 6 s.\nVolumes ao Atingir Herói\nComentário dos desenvolvedores: fizemos uma revisão geral em todo o elenco para aproximar o volume de heróis atingidos a outros tipos de heróis semelhantes. Trouxemos os valores em vez das porcentagens para que a mudança em relação a outros heróis fique mais clara. Os volumes de acerto não foram padronizados porque há modelos visuais de tamanhos diferentes, conjuntos de animações únicas e diversas habilidades de movimento. No entanto, eles são influenciados por fatores como alcance de ataque e mobilidade.\nFizemos isso para que atingir alvos seja mais consistente, mas não há mudanças na sensação durante o jogo.",
+      "value_changes": [
+        {
+          "old_value": "5",
+          "new_value": "6 s",
+          "text": "Duração aumentada de 5 para 6 s."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Lúcio",
+      "hero_id": "lucio",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 13,2 para 16.",
+      "value_changes": [
+        {
+          "old_value": "13,2",
+          "new_value": "16",
+          "text": "Volume de acerto na cabeça aumentado de 13,2 para 16."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Mauga",
+      "hero_id": "mauga",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 22 para 23,5.\nVolumes de acerto na mão reduzidos de 16 para 12.\nVolumes de acerto na perna reduzido de 50 para 35.\nVolume de acerto no torso aumentado de 40 para 42.\nLagura do volume de acerto no torso aumentada de 30 para 40.",
+      "value_changes": [
+        {
+          "old_value": "22",
+          "new_value": "23,5",
+          "text": "Volume de acerto na cabeça aumentado de 22 para 23,5."
+        },
+        {
+          "old_value": "16",
+          "new_value": "12",
+          "text": "Volumes de acerto na mão reduzidos de 16 para 12."
+        },
+        {
+          "old_value": "50",
+          "new_value": "35",
+          "text": "Volumes de acerto na perna reduzido de 50 para 35."
+        },
+        {
+          "old_value": "40",
+          "new_value": "42",
+          "text": "Volume de acerto no torso aumentado de 40 para 42."
+        },
+        {
+          "old_value": "30",
+          "new_value": "40",
+          "text": "Lagura do volume de acerto no torso aumentada de 30 para 40."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Mercy",
+      "hero_id": "mercy",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 14,4 para 17.\nVolume de acerto no torso aumentado de 22,4 para 24,5.\nVolumes de acerto na perna reduzido de 22,4 para 20.",
+      "value_changes": [
+        {
+          "old_value": "14,4",
+          "new_value": "17",
+          "text": "Volume de acerto na cabeça aumentado de 14,4 para 17."
+        },
+        {
+          "old_value": "22,4",
+          "new_value": "24,5",
+          "text": "Volume de acerto no torso aumentado de 22,4 para 24,5."
+        },
+        {
+          "old_value": "22,4",
+          "new_value": "20",
+          "text": "Volumes de acerto na perna reduzido de 22,4 para 20."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Mizuki",
+      "hero_id": "mizuki",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Altura de volume de acerto na cabeça reduzido de 10 para 6.\nVolume de acerto na cabeça aumentado de 16 para 17,5.\nVolume de acerto no torso aumentado de 22 para 24.\nVolume de acerto na perna aumentado de 17 para 19.",
+      "value_changes": [
+        {
+          "old_value": "10",
+          "new_value": "6",
+          "text": "Altura de volume de acerto na cabeça reduzido de 10 para 6."
+        },
+        {
+          "old_value": "16",
+          "new_value": "17,5",
+          "text": "Volume de acerto na cabeça aumentado de 16 para 17,5."
+        },
+        {
+          "old_value": "22",
+          "new_value": "24",
+          "text": "Volume de acerto no torso aumentado de 22 para 24."
+        },
+        {
+          "old_value": "17",
+          "new_value": "19",
+          "text": "Volume de acerto na perna aumentado de 17 para 19."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Moira",
+      "hero_id": "moira",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto no torso reduzido de 27 para 25.",
+      "value_changes": [
+        {
+          "old_value": "27",
+          "new_value": "25",
+          "text": "Volume de acerto no torso reduzido de 27 para 25."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Ramattra",
+      "hero_id": "ramattra",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Corrigimos as reduções de velocidade de recarga, que não eram aplicadas ao Acelerador do Vazio.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Reinhardt",
+      "hero_id": "reinhardt",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto no torso reduzido de 40 para 35.\nVolumes de acerto na mão reduzidos de 25 para 20.\nVolumes de acerto na mão reduzidos de 40 para 30.",
+      "value_changes": [
+        {
+          "old_value": "40",
+          "new_value": "35",
+          "text": "Volume de acerto no torso reduzido de 40 para 35."
+        },
+        {
+          "old_value": "25",
+          "new_value": "20",
+          "text": "Volumes de acerto na mão reduzidos de 25 para 20."
+        },
+        {
+          "old_value": "40",
+          "new_value": "30",
+          "text": "Volumes de acerto na mão reduzidos de 40 para 30."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Roadhog",
+      "hero_id": "roadhog",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Comentário dos desenvolvedores: tínhamos dois objetivos com a reformulação do Roadhog (reduzir a frustração da alta letalidade da Corrente de Gancho contra a maioria dos heróis e dar novas ferramentas para o Roadhog e a equipe como um tanque tradicional). Mudar o disparo primário dele para uma cadência de 2 disparos junto com outros pequenos ajustes na Corrente de Gancho preserva a força da habilidade como ferramenta de deslocamento, mas diminui sua letalidade. Já a nova habilidade dele, Compactador de Lixo, traz uma nova utilidade para ele e a equipe que reforça como o Roadhog é uma força letal no campo de batalha. Enquanto Compactador de Lixo estiver ativo, Roadhog suga projéteis à frente e os transforma num projétil explosivo para jogar de volta contra os inimigos. Compactador de Lixo é uma habilidade forte de defesa e ataque. Além disso, ele ajuda Roadhog a fazer jogadas decisivas que vão além de só tentar eliminar heróis de uma só vez com um combo.\nGancho de Sucata – Aprimoramento Secundário\nMunição recarregada aumentada de 2 para 4.\nLança-estilhaços – Aprimoramento Secundário\nRemovido.\nAqui, Porquinho – Aprimoramento Secundário\nNovo Aprimoramento Secundário.\nDurante Cair Matando, o tempo de recarga da Corrente de Gancho é reduzido em 80%.\nPorco Desfiado – Aprimoramento Principal\nRemovido.\nExaustão Tóxica – Aprimoramento Principal\nNovo Aprimoramento Principal.\nInimigos na frente do Roadhog são desacelerados em 30% e recebem 20 de dano por segundo enquanto Compactador de Lixo está ativo.\nArma de Sucata – Disparo Primário\nO disparo primário agora dispara duas rajadas por saraivada.\nMunição aumentada de 6 para 12.\nDano total por saraivada aumentado de 175 para 204.\nMultiplicador de dano crítico reduzido de 2 para 1,5x.\nContagem de projéteis da espingarda reduzida de 25 para 16.\nDano por projétil da espingarda reduzido de 7 para 4,25.\nAgora dispara um projétil maior no centro de cada disparo.\nO centro do projétil causa 34 de dano.\nDispersão reduzida de 8 para 6 graus.\nAlcance do declínio reduzido de 30 a 50 m para 20 a 35 m.\nVelocidade de projétil aumentada de 80 para 100 m por segundo.\nArma de Sucata – Disparo Secundário\nRemovido.\nCompactador de Lixo\nNova habilidade atribuída ao disparo secundário por padrão.\nAo ser ativada, começa a absorver projéteis na frente do Roadhog por 2 s.\nApós este período, dispara um projétil explosivo cujo dano aumenta de acordo com o dano absorvido, variando de 75 a 200 de dano.\nO raio interno da explosão é 2 m, o raio externo é 6 m com 30% de escalar do declínio.\nO dano de impacto é 10.\nA taxa de conversão é 30% do dano absorvido.\nA penalidade da velocidade de movimento é 15% enquanto estiver ativo.\nTempo de recarga de 10 s no 5v5.\nTempo de recarga de 11 s no 6v6.\nCorrente de Gancho\nDuração do Atordoamento após ser puxado reduzida de 0,4 s para 0,3 s.\nDistância final entre o alvo e o Roadhog após puxar aumentada de 3 m para 4,5 m.\nTempo de recarga reduzido de 7 para 6 s no 5v5.\nTempo de recarga reduzido de 8 para 7 s no 6v6.\nPegando Fôlego\nDuração máxima reduzida de 3 a 2 s.\nCura ao longo do tempo aumentada de 150 para 200 por segundo.\nRedução de dano reduzida de 40% para 35%.\nTempo de recarga aumentado de 1,25 para 2 s.",
+      "value_changes": [
+        {
+          "old_value": "2",
+          "new_value": "4",
+          "text": "Munição recarregada aumentada de 2 para 4."
+        },
+        {
+          "old_value": "6",
+          "new_value": "12",
+          "text": "Munição aumentada de 6 para 12."
+        },
+        {
+          "old_value": "175",
+          "new_value": "204",
+          "text": "Dano total por saraivada aumentado de 175 para 204."
+        },
+        {
+          "old_value": "2",
+          "new_value": "1,5x",
+          "text": "Multiplicador de dano crítico reduzido de 2 para 1,5x."
+        },
+        {
+          "old_value": "25",
+          "new_value": "16",
+          "text": "Contagem de projéteis da espingarda reduzida de 25 para 16."
+        },
+        {
+          "old_value": "7",
+          "new_value": "4,25",
+          "text": "Dano por projétil da espingarda reduzido de 7 para 4,25."
+        },
+        {
+          "old_value": "8",
+          "new_value": "6 graus",
+          "text": "Dispersão reduzida de 8 para 6 graus."
+        },
+        {
+          "old_value": "30 a 50 m",
+          "new_value": "20 a 35 m",
+          "text": "Alcance do declínio reduzido de 30 a 50 m para 20 a 35 m."
+        },
+        {
+          "old_value": "80",
+          "new_value": "100 m por segundo",
+          "text": "Velocidade de projétil aumentada de 80 para 100 m por segundo."
+        },
+        {
+          "old_value": "0,4 s",
+          "new_value": "0,3 s",
+          "text": "Duração do Atordoamento após ser puxado reduzida de 0,4 s para 0,3 s."
+        },
+        {
+          "old_value": "3 m",
+          "new_value": "4,5 m",
+          "text": "Distância final entre o alvo e o Roadhog após puxar aumentada de 3 m para 4,5 m."
+        },
+        {
+          "old_value": "7",
+          "new_value": "6 s no 5v5",
+          "text": "Tempo de recarga reduzido de 7 para 6 s no 5v5."
+        },
+        {
+          "old_value": "8",
+          "new_value": "7 s no 6v6",
+          "text": "Tempo de recarga reduzido de 8 para 7 s no 6v6."
+        },
+        {
+          "old_value": "150",
+          "new_value": "200 por segundo",
+          "text": "Cura ao longo do tempo aumentada de 150 para 200 por segundo."
+        },
+        {
+          "old_value": "40%",
+          "new_value": "35%",
+          "text": "Redução de dano reduzida de 40% para 35%."
+        },
+        {
+          "old_value": "1,25",
+          "new_value": "2 s",
+          "text": "Tempo de recarga aumentado de 1,25 para 2 s."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Roadhog",
+      "hero_id": "roadhog",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Corrigimos as reduções de velocidade de recarga acumuladas duas vezes na Arma de Sucata.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Shion",
+      "hero_id": "shion",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Comentário dos desenvolvedores: o desempenho do aprimoramento secundário Recarregamento Rápido foi abaixo do esperando e o substituímos por Instinto de Sobrevivência. Assim, damos uma opção de sobrevivência mais segura para jogadores mais agressivos aumentando a duração da vida extra de Evasão.\nRecarregamento Rápido – Aprimoramento Secundário\nRemovido.\nInstinto de Sobrevivência – Aprimoramento Secundário\nNovo.\nA duração da vida extra da Evasão é aumentada em 1 s.\nSuporte",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Shion",
+      "hero_id": "shion",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Corrigimos as reduções de velocidade de recarga acumuladas duas vezes nas Pistolas Kira.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Sierra",
+      "hero_id": "sierra",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto no torso aumentado de 20,7 para 23.\nVolume de acerto na perna aumentado de 16,7 para 19.\nVolume de acerto na perna aumentado de 15 para 19.\nVolumes de acerto na perna reduzido de 54,9 para 40.",
+      "value_changes": [
+        {
+          "old_value": "20,7",
+          "new_value": "23",
+          "text": "Volume de acerto no torso aumentado de 20,7 para 23."
+        },
+        {
+          "old_value": "16,7",
+          "new_value": "19",
+          "text": "Volume de acerto na perna aumentado de 16,7 para 19."
+        },
+        {
+          "old_value": "15",
+          "new_value": "19",
+          "text": "Volume de acerto na perna aumentado de 15 para 19."
+        },
+        {
+          "old_value": "54,9",
+          "new_value": "40",
+          "text": "Volumes de acerto na perna reduzido de 54,9 para 40."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Sojourn",
+      "hero_id": "sojourn",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 14,9 para 16.\nVolume de acerto no torso aumentado de 20,5 para 23,5.\nVolume de acerto na perna aumentado de 17 para 18,5.",
+      "value_changes": [
+        {
+          "old_value": "14,9",
+          "new_value": "16",
+          "text": "Volume de acerto na cabeça aumentado de 14,9 para 16."
+        },
+        {
+          "old_value": "20,5",
+          "new_value": "23,5",
+          "text": "Volume de acerto no torso aumentado de 20,5 para 23,5."
+        },
+        {
+          "old_value": "17",
+          "new_value": "18,5",
+          "text": "Volume de acerto na perna aumentado de 17 para 18,5."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Sombra",
+      "hero_id": "sombra",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Comentário dos desenvolvedores: a Sombra passou para a função Suporte com a reformulação mais recente. Antes, a identidade dela de gênio disruptiva era perfeita para o que se espera da função Dano. Transformá-la em Suporte nos permitiu mergulhar na fantasia de herói dela, mas mantendo os pilares de sua jogabilidade intactas.\nUma mudança importante desta reformulação é que Hackear não é mais uma habilidade. Enfrentar a Sombra muitas vezes é sinônimo de não poder usar suas habilidades periodicamente. Para quem joga de Sombra, isso cria momentos divertidos de cancelar as habilidades principais de outros jogadores. No entanto, a maior parte da comunidade considera frustrante e difícil de enfrentar. Ao retirar Hackear das habilidades principais dela, adicionamos uma nova penalidade que a Sombra pode causar: Enfraquecimento, que diminui pela metade o dano e a cura dos inimigos. Um Enfraquecimento no momento certo pode virar o jogo, assim como Hackear, sem impedir que os inimigos usem suas habilidades.\nPassou da função Dano para Suporte.\nPassou da subfunção Reconhecimento para Estratégia.\nExperiência necessária para obter o aprimoramento secundário aumentada em 67%.\nExperiência necessária para obter o aprimoramento principal aumentada para 69,5%.\nUpload Criptografado – Aprimoramento Secundário\nRemovido.\nHack Vital – Aprimoramento Secundário\nNovo Aprimoramento Secundário.\nPEM aplica Ajuste a todos os aliados ao alcance.\nBanda Larga de Fibra – Aprimoramento Principal\nRemovido.\nPacote de Dados – Aprimoramento Principal\nNovo Aprimoramento Principal.\nHackear Kits Médicos com Ajuste reduz o tempo de recarga principal em 4 s.\nReplicação Viral – Aprimoramento Principal\nRemovido.\nCibersegurança - Aprimoramento Principal\nNovo Aprimoramento Principal.\nA cura de Ciberespaço é dobrada em aliados com menos da metade da vida.\nPistola Automática\nDano por projétil reduzido de 8 para 7.\nDistância mínima de declínio aumentada de 15 para 20 m.\nDispersão máxima reduzida de 2,3 para 2 graus.\nDisparos até a dispersão máxima aumentados de 6 para 10.\nPEM\nCusto da habilidade suprema aumentado em 67,5%.\nDano reduzido de 25% da vida atual para 20% da vida atual.\nHackear\nRemovido.\nAjuste\nNova habilidade atribuída ao disparo secundário por padrão.\nCura uma determinada quantidade de vida de um aliado ao longo do tempo.\nUsar Ajuste em um aliado concede 65 de vida instantânea e 25 de vida por segundo ao longo de sua duração.\nAjuste dura até um aliado se curar em 175 de vida ou por 12 s.\nAjuste também pode ser usado em Kits Médicos e na maioria dos implantáveis de inimigos para hackeá-los. Você não precisa de cargas de Ajuste para fazer isso, e há um novo tempo de recarga de 6 s.\nDuração de Kit Médico hackeado reduzida de 45 s para 30 s.\nO hackeamento de Kits Médicos e implantáveis pode ser interrompido ao sofrer dano. Isto cancela a habilidade e ativa um novo tempo de recarga de 6 s.\nAjuste pode ser usado durante a furtividade, revelando a Sombra temporariamente sem interromper a furtividade.\nO tempo de lançamento é 0,5 s.\nO alcance é 17 m.\nTem 2 cargas.\nTempo de recarga de 8 s.\nVírus\nRemovido.\nCiberespaço\nNova habilidade atribuída à Habilidade 1 por padrão.\nDispara um projétil que explode com o impacto, criando uma área que enfraquece inimigos e cura aliados.\nA explosão inicial causa 40 de dano a inimigos e cura os aliados em 40 de vida.\nA área causa 25 de dano por segundo a inimigos e cura os aliados em 30 de vida por segundo.\nA duração da zona é 3 s.\nO raio da zona é 5 m.\nInimigos dentro da zona ficam enfraquecidos, que é um novo efeito de status que reduz em 50% o dano do alvo e a cura realizada.\nTranslocador\nDuração da furtividade aumentada de 5 para 6,5 s.\nTempo para entrar na Furtividade aumentado de 0,3 s para 0,75 s.\nAlcance de projéteis reduzido de 18 para 12,25 m.\nO bônus de velocidade de movimento agora é ativado imediatamente depois de se teletransportar em vez de após entrar na Furtividade.\nTempo de recarga aumentado de 6 para 7,5 s.\nOportunista\nRemovido.\nConspiradora\nNova Passiva.\nHabilidades supremas inimigas com carga total são reveladas para você.\nTanque",
+      "value_changes": [
+        {
+          "old_value": "8",
+          "new_value": "7",
+          "text": "Dano por projétil reduzido de 8 para 7."
+        },
+        {
+          "old_value": "15",
+          "new_value": "20 m",
+          "text": "Distância mínima de declínio aumentada de 15 para 20 m."
+        },
+        {
+          "old_value": "2,3",
+          "new_value": "2 graus",
+          "text": "Dispersão máxima reduzida de 2,3 para 2 graus."
+        },
+        {
+          "old_value": "6",
+          "new_value": "10",
+          "text": "Disparos até a dispersão máxima aumentados de 6 para 10."
+        },
+        {
+          "old_value": "25% da vida atual",
+          "new_value": "20% da vida atual",
+          "text": "Dano reduzido de 25% da vida atual para 20% da vida atual."
+        },
+        {
+          "old_value": "45 s",
+          "new_value": "30 s",
+          "text": "Duração de Kit Médico hackeado reduzida de 45 s para 30 s."
+        },
+        {
+          "old_value": "5",
+          "new_value": "6,5 s",
+          "text": "Duração da furtividade aumentada de 5 para 6,5 s."
+        },
+        {
+          "old_value": "0,3 s",
+          "new_value": "0,75 s",
+          "text": "Tempo para entrar na Furtividade aumentado de 0,3 s para 0,75 s."
+        },
+        {
+          "old_value": "18",
+          "new_value": "12,25 m",
+          "text": "Alcance de projéteis reduzido de 18 para 12,25 m."
+        },
+        {
+          "old_value": "6",
+          "new_value": "7,5 s",
+          "text": "Tempo de recarga aumentado de 6 para 7,5 s."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Sombra",
+      "hero_id": "sombra",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 14 para 16.\nVolume de acerto no torso reduzido de 25 para 23.\nVolume de acerto na perna aumentado de 15 para 18.",
+      "value_changes": [
+        {
+          "old_value": "14",
+          "new_value": "16",
+          "text": "Volume de acerto na cabeça aumentado de 14 para 16."
+        },
+        {
+          "old_value": "25",
+          "new_value": "23",
+          "text": "Volume de acerto no torso reduzido de 25 para 23."
+        },
+        {
+          "old_value": "15",
+          "new_value": "18",
+          "text": "Volume de acerto na perna aumentado de 15 para 18."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Symmetra",
+      "hero_id": "symmetra",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto no torso aumentado de 22,4 para 24.\nVolumes de acerto na perna reduzido de 22,4 para 20.",
+      "value_changes": [
+        {
+          "old_value": "22,4",
+          "new_value": "24",
+          "text": "Volume de acerto no torso aumentado de 22,4 para 24."
+        },
+        {
+          "old_value": "22,4",
+          "new_value": "20",
+          "text": "Volumes de acerto na perna reduzido de 22,4 para 20."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Torbjörn",
+      "hero_id": "torbjorn",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volumes de acerto na perna reduzido de 23,3 para 20.\nVolumes de acerto na mão reduzidos de 15 para 11.",
+      "value_changes": [
+        {
+          "old_value": "23,3",
+          "new_value": "20",
+          "text": "Volumes de acerto na perna reduzido de 23,3 para 20."
+        },
+        {
+          "old_value": "15",
+          "new_value": "11",
+          "text": "Volumes de acerto na mão reduzidos de 15 para 11."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Tracer",
+      "hero_id": "tracer",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto no torso aumentado de 22,4 para 24.\nVolumes de acerto nas pernas reduzido de 22,4 para 20.\nVenture\nVolume de acerto no torso aumentado de 22,9 para 25.\nVolume de acerto na perna aumentado de 17 para 21.",
+      "value_changes": [
+        {
+          "old_value": "22,4",
+          "new_value": "24",
+          "text": "Volume de acerto no torso aumentado de 22,4 para 24."
+        },
+        {
+          "old_value": "22,4",
+          "new_value": "20",
+          "text": "Volumes de acerto nas pernas reduzido de 22,4 para 20."
+        },
+        {
+          "old_value": "22,9",
+          "new_value": "25",
+          "text": "Volume de acerto no torso aumentado de 22,9 para 25."
+        },
+        {
+          "old_value": "17",
+          "new_value": "21",
+          "text": "Volume de acerto na perna aumentado de 17 para 21."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Vendetta",
+      "hero_id": "vendetta",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Corrigimos um problema que fazia com que Talho Voador não contabilizasse o dano causado em desafios.\nWidowmaker\nCorrigimos as reduções de velocidade de recarga, que não eram aplicadas ao Beijo da Viúva.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Wrecking Ball",
+      "hero_id": "wrecking ball",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 22 para 25.\nVolume de acerto no torso aumentado de 83,5 para 87.5.",
+      "value_changes": [
+        {
+          "old_value": "22",
+          "new_value": "25",
+          "text": "Volume de acerto na cabeça aumentado de 22 para 25."
+        },
+        {
+          "old_value": "83,5",
+          "new_value": "87",
+          "text": "Volume de acerto no torso aumentado de 83,5 para 87.5."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Wuyang",
+      "hero_id": "wuyang",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volume de acerto na cabeça aumentado de 14,85 para 16.\nVolume de acerto no torso aumentado de 20,2 para 23.",
+      "value_changes": [
+        {
+          "old_value": "14,85",
+          "new_value": "16",
+          "text": "Volume de acerto na cabeça aumentado de 14,85 para 16."
+        },
+        {
+          "old_value": "20,2",
+          "new_value": "23",
+          "text": "Volume de acerto no torso aumentado de 20,2 para 23."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Zarya",
+      "hero_id": "zarya",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Corrigimos as reduções de velocidade de recarga, que não eram aplicadas ao Canhão de Partículas.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Zenyatta",
+      "hero_id": "zenyatta",
+      "mode": "Overwatch",
+      "date": "6 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 6 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Volumes de acerto na perna reduzido de 20 para 17.\nVolume de acerto no torso reduzido de 32 para 30.\nVolumes de acerto na perna reduzido de 24 para 22.\nAtualizações do jogo principal\nAtualizações do Painel de Informações Avançadas\nVelocidade e tamanho de projétil foram adicionados às armas e habilidades relevantes.\nA palavra-chave Preciso foi adicionada para descrever ataques com “tamanho” 0.\nVárias palavras-chave novas e itens de linha foram adicionados para descrever em mais detalhes mecânicas de habilidades de heróis mais complexas.\nMuitas correções de bugs e modificações foram feitas de acordo com os comentários da comunidade.\nProteções\nTanques com habilidades de redução de dano e vida extra agora têm mais chance de obter Proteções ao usar estas habilidades e serem alvos em vez de aliados próximos.\nAumentamos o tempo de recarga e diminuímos o limite de mitigação de dano para Proteções para que mais Tanques possam obter Proteções com mais frequência.\nSistema de ping\nRemovemos o texto no bate-papo de texto que adicionamos na 4ª Temporada ao marcar heróis inimigos, pois isso enchia o bate-papo bem rápido.\nHeróis Misteriosos\nO máximo de 3 Tanques foi restaurado.\nVotação de Mapa\nAgora, é impossível aparecer na seleção os dois últimos mapas que você jogou por um período de duas horas.\nAgora, Escolta e Híbrido serão considerados o mesmo modo para oferecer pelo menos dois modos de jogo diferentes na Votação de Mapa. Ou seja, se dois dos três mapas visíveis forem Escolta e Híbrido, o terceiro necessariamente será outro modo. Mapa aleatório não segue estas regras novas e ainda pode ser qualquer modo.",
+      "value_changes": [
+        {
+          "old_value": "20",
+          "new_value": "17",
+          "text": "Volumes de acerto na perna reduzido de 20 para 17."
+        },
+        {
+          "old_value": "32",
+          "new_value": "30",
+          "text": "Volume de acerto no torso reduzido de 32 para 30."
+        },
+        {
+          "old_value": "24",
+          "new_value": "22",
+          "text": "Volumes de acerto na perna reduzido de 24 para 22."
+        }
+      ],
       "category": "hero_update"
     },
     {
