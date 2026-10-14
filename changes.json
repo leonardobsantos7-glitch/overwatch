@@ -1,8 +1,8 @@
 {
   "source": "Blizzard official Overwatch patch notes",
   "generated_at": "2026-10-14",
-  "total_records": 1779,
-  "total_overwatch_records": 1578,
+  "total_records": 1783,
+  "total_overwatch_records": 1582,
   "total_stadium_records": 201,
   "records": [
     {
@@ -6350,6 +6350,99 @@
       "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2020/10/",
       "raw_text": "Corrigimos o problema que fazia o efeito de acerto do feixe ser exibido incorretamente em barreiras\nJogos Personalizados\nCorrigimos um problema com a configuração da proporção da vida da porta em jogos personalizados de Junkenstein\nCorrigimos um problema com a configuração da dificuldade de jogos personalizados de Junkenstein",
       "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "D.Mon",
+      "hero_id": "d.mon",
+      "mode": "Overwatch",
+      "date": "13 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 13 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Armadura padrão reduzida de 275 para 250.\nTopo da publicação",
+      "value_changes": [
+        {
+          "old_value": "275",
+          "new_value": "250",
+          "text": "Armadura padrão reduzida de 275 para 250."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Kiriko",
+      "hero_id": "kiriko",
+      "mode": "Overwatch",
+      "date": "13 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 13 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Vida padrão aumentada de 225 para 250.",
+      "value_changes": [
+        {
+          "old_value": "225",
+          "new_value": "250",
+          "text": "Vida padrão aumentada de 225 para 250."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Roadhog",
+      "hero_id": "roadhog",
+      "mode": "Overwatch",
+      "date": "13 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 13 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Arma de Sucata\nDano do projétil central aumentado de 34 para 40.\nPegando Fôlego\nTempo de recarga reduzido de 2 para 1,25 s.\nRedução de dano aumentada de 35% para 40%.\nDuração aumentada de 2 para 2,5 segundos.",
+      "value_changes": [
+        {
+          "old_value": "34",
+          "new_value": "40",
+          "text": "Dano do projétil central aumentado de 34 para 40."
+        },
+        {
+          "old_value": "2",
+          "new_value": "1,25 s",
+          "text": "Tempo de recarga reduzido de 2 para 1,25 s."
+        },
+        {
+          "old_value": "35%",
+          "new_value": "40%",
+          "text": "Redução de dano aumentada de 35% para 40%."
+        },
+        {
+          "old_value": "2",
+          "new_value": "2,5 segundos",
+          "text": "Duração aumentada de 2 para 2,5 segundos."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Sombra",
+      "hero_id": "sombra",
+      "mode": "Overwatch",
+      "date": "13 de outubro de 2026",
+      "patch_title": "Notas de atualização de Overwatch 2 – 13 de outubro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/10/",
+      "raw_text": "Pistola Automática\nDano reduzido de 7 para 6,5.\nCiberespaço\nDano explosivo reduzido de 40 para 20.\nTempo de recarga aumentado de 12 para 13 s.",
+      "value_changes": [
+        {
+          "old_value": "7",
+          "new_value": "6,5",
+          "text": "Dano reduzido de 7 para 6,5."
+        },
+        {
+          "old_value": "40",
+          "new_value": "20",
+          "text": "Dano explosivo reduzido de 40 para 20."
+        },
+        {
+          "old_value": "12",
+          "new_value": "13 s",
+          "text": "Tempo de recarga aumentado de 12 para 13 s."
+        }
+      ],
       "category": "hero_update"
     },
     {
