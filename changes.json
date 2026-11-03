@@ -1,9 +1,9 @@
 {
   "source": "Blizzard official Overwatch patch notes",
   "generated_at": "2026-11-03",
-  "total_records": 1783,
-  "total_overwatch_records": 1582,
-  "total_stadium_records": 201,
+  "total_records": 1810,
+  "total_overwatch_records": 1604,
+  "total_stadium_records": 206,
   "records": [
     {
       "hero": "Bastion",
@@ -18867,6 +18867,461 @@
           "text": "Dano máximo reduzido de 400 para 300"
         }
       ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Ana",
+      "hero_id": "ana",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: mudanças recentes que aumentaram a autocura da Granada Biótica também elevaram seu dano explosivo contra inimigos. Vamos separar os valores de dano e cura para reduzir seu poder ofensivo sem perder o aumento da autocura.\nGranada Biótica\nDano explosivo reduzido de 90 para 60.",
+      "value_changes": [
+        {
+          "old_value": "90",
+          "new_value": "60",
+          "text": "Dano explosivo reduzido de 90 para 60."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Anran",
+      "hero_id": "anran",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: remover a repulsão do Ímpeto Infernal e impedir que atinja o mesmo alvo várias vezes limita seus efeitos em uma única utilização. Aumentar o dano dos Leques do Pássaro Vermelho melhora a eficácia da Anran a longas distâncias e cria mais oportunidades de incendiar inimigos com o disparo primário. Também reduzimos o tempo de lançamento de Ascensão do Pássaro Vermelho para que ela possa reagir mais rapidamente durante os confrontos.\nLeques do Pássaro Vermelho\nDano aumentado de 22 para 24.\nÍmpeto Infernal\nRepulsão removida.\nNão pode mais atingir o mesmo alvo várias vezes por utilização.\nAscensão do Pássaro Vermelho\nTempo de lançamento reduzido de 1,2 para 1 s.",
+      "value_changes": [
+        {
+          "old_value": "22",
+          "new_value": "24",
+          "text": "Dano aumentado de 22 para 24."
+        },
+        {
+          "old_value": "1,2",
+          "new_value": "1 s",
+          "text": "Tempo de lançamento reduzido de 1,2 para 1 s."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Baptiste",
+      "hero_id": "baptiste",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Pulso Regenerador\nAdicionamos um novo elemento de IU que mostra os aliados ao alcance e os que estão sob o efeito de Pulso Regenerador.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Brigitte",
+      "hero_id": "brigitte",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: a cura instantânea adicionada a Inspirar aumentou a capacidade de cura da Brigitte, mas teve pouco efeito sobre sua habilidade de manter a si mesma e os aliados vivos durante os combates. Aumentar essa cura instantânea e reduzir seu tempo de recarga interno permite curar com mais frequência em ataques prolongados.\nInspirar\nTempo de recarga interno reduzido de 1,25 para 1 s.\nCura instantânea aumentada de 12 para 15.\nDoctrine\nComentário dos desenvolvedores: o desempenho geral de Doctrine está relativamente equilibrado desde seu lançamento. Aumentar os tempos de recarga de Impulso Oculto e Infusão exige mais atenção ao uso das duas habilidades durante os ataques, sem reduzir o poder individual de cada uma.\nImpulso Oculto\nTempo de recarga aumentado de 8 para 10 s.\nInfusão\nTempo de recarga aumentado de 8 para 9 s.\nInfuse\nCooldown increased from 8 to 9 seconds.",
+      "value_changes": [
+        {
+          "old_value": "1,25",
+          "new_value": "1 s",
+          "text": "Tempo de recarga interno reduzido de 1,25 para 1 s."
+        },
+        {
+          "old_value": "12",
+          "new_value": "15",
+          "text": "Cura instantânea aumentada de 12 para 15."
+        },
+        {
+          "old_value": "8",
+          "new_value": "10 s",
+          "text": "Tempo de recarga aumentado de 8 para 10 s."
+        },
+        {
+          "old_value": "8",
+          "new_value": "9 s",
+          "text": "Tempo de recarga aumentado de 8 para 9 s."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Cassidy",
+      "hero_id": "cassidy",
+      "mode": "Stadium",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Bombardeio Devastador – Poder\nDano aumentado para 50% de dano reduzido (era 60%).\nBala de Prata – Poder\nDano aumentado para 60 (era 50).",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "D.Mon",
+      "hero_id": "d.mon",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: as mudanças na Barreira de Poder exigem mais critério ao posicioná-la e tornam seu funcionamento mais claro para os inimigos. Propulsores continuará repelindo os inimigos, mas não causará mais dano de impacto, reduzindo o potencial de dano explosivo da D.Mon. Também reduzimos o roubo de vida de Ataque Exagerado para limitar a quantidade total de vida que ele pode conceder.\nAtaque Exagerado – Aprimoramento Principal\nRoubo de vida reduzido de 150% para 125%.\nBarreira de Poder\nRecuperação aumentada de 0,2 para 0,3 s.\nAgora tem duração mínima de 0,25 s após ser posicionada.\nPropulsores\nDano de impacto reduzido de 15 para 0.\nRainha Junker\nComentário dos desenvolvedores: a reserva de vida relativamente baixa da Rainha Junker pode limitar sua habilidade de entrar em combate quando ela não consegue aplicar Ferimentos e se beneficiar da cura. Aumentar sua vida padrão melhora sua sobrevivência, enquanto reduzir o tempo de recarga de Carnificina oferece mais oportunidades de usá-lo quando os inimigos estão ao alcance.\nVida padrão aumentada de 375 para 425.\nVida padrão aumentada de 450 para 500. (6v6)\nGrito de Guerra\nAdicionamos um novo elemento de IU que mostra os aliados ao alcance e os que estão sob o efeito de Grito de Guerra.\nMorticínio\nTempo de recarga reduzido de 9 para 7 s.",
+      "value_changes": [
+        {
+          "old_value": "150%",
+          "new_value": "125%",
+          "text": "Roubo de vida reduzido de 150% para 125%."
+        },
+        {
+          "old_value": "0,2",
+          "new_value": "0,3 s",
+          "text": "Recuperação aumentada de 0,2 para 0,3 s."
+        },
+        {
+          "old_value": "15",
+          "new_value": "0",
+          "text": "Dano de impacto reduzido de 15 para 0."
+        },
+        {
+          "old_value": "375",
+          "new_value": "425",
+          "text": "Vida padrão aumentada de 375 para 425."
+        },
+        {
+          "old_value": "450",
+          "new_value": "500",
+          "text": "Vida padrão aumentada de 450 para 500. (6v6)"
+        },
+        {
+          "old_value": "9",
+          "new_value": "7 s",
+          "text": "Tempo de recarga reduzido de 9 para 7 s."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "D.Mon",
+      "hero_id": "d.mon",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Corrigimos um problema que fazia os Propulsores da D.Mon lançá-la muito mais rápido quando usados no ar do que no chão.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Echo",
+      "hero_id": "echo",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: Munições Aéreas agora também recarrega a munição, aumentando sua utilidade e reduzindo a necessidade de recarregar logo após o uso.\nMunições Aéreas – Aprimoramento Secundário\nAgora também recarrega a munição ao ser usada.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Emre",
+      "hero_id": "emre",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: reduzir o tempo de detonação da Cibergranada melhora sua resposta e a torna mais confiável para finalizar alvos.\nTambém fizemos pequenos ajustes de qualidade de vida nas opções de personalização do retículo padrão do Emre e corrigimos algumas inconsistências visuais na aplicação dessas opções. A mira do Emre dentro do jogo não mudou. As alterações afetam apenas as opções de personalização do retículo padrão.\nAdicionamos a configuração Rotação ao retículo padrão.\nRemovemos a configuração Espessura do retículo padrão.\nCorrigimos uma inconsistência visual que fazia as linhas do retículo padrão ignorarem os valores de Espessura do Contorno e Deslocamento do Contorno.\nAtualizamos a prévia do retículo padrão nas Opções para refletir melhor sua aparência no jogo.\nCibergranada\nTempo de detonação reduzido de 0,6 para 0,5 s.",
+      "value_changes": [
+        {
+          "old_value": "0,6",
+          "new_value": "0,5 s",
+          "text": "Tempo de detonação reduzido de 0,6 para 0,5 s."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Genji",
+      "hero_id": "genji",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: mudanças recentes melhoraram a habilidade do Genji de garantir eliminações e favoreceram um estilo de jogo mais agressivo. Reduzir a duração de Desviar exige um uso mais preciso da habilidade e limita o tempo de atividade em que ela oferece proteção.\nDesviar\nDuração reduzida para 1,5 s (era 2 s).",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Genji",
+      "hero_id": "genji",
+      "mode": "Stadium",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Bocada do Dragão – Poder\nDano por acúmulo do Golpe Veloz aumentado para 15% (era 10%).",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Hanzo",
+      "hero_id": "hanzo",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: Disrupção Sônica não substituirá mais Kits Médicos hackeados pela Sombra. Assim, nenhum dos heróis poderá tomar o controle de um Kit Médico já dominado pelo outro.\nDisrupção Sônica – Aprimoramento Principal\nNão substitui mais Kits Médicos hackeados pela Sombra.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Illari",
+      "hero_id": "illari",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: mudanças recentes no tamanho dos projéteis reduziram a eficácia ofensiva geral da Illari. Reduzir o tempo de carga do disparo primário do Rifle Solar diminui a dependência de cada tiro e aumenta o dano total causado por ela, reforçando seu papel como Suporte de alto dano. Também aumentamos a cura do Obelisco de Cura para fortalecer as posições defensivas da Illari quando ele é bem posicionado.\nRifle Solar\nTempo para atingir a carga máxima reduzido de 0,65 para 0,575 s.\nObelisco de Cura\nCura por projétil aumentada de 40 para 50.",
+      "value_changes": [
+        {
+          "old_value": "0,65",
+          "new_value": "0,575 s",
+          "text": "Tempo para atingir a carga máxima reduzido de 0,65 para 0,575 s."
+        },
+        {
+          "old_value": "40",
+          "new_value": "50",
+          "text": "Cura por projétil aumentada de 40 para 50."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Jetpackcat",
+      "hero_id": "jetpackcat",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: a Jetpack Cat continua sobrevivendo bem aos combates graças à sua alta mobilidade aérea. Reduzir sua vida padrão limita a sobrevivência e a agressividade proporcionadas por essa mobilidade, sem tirar dela esse ponto forte. Também aumentamos a aceleração de Voo Veloz para permitir reposicionamentos mais rápidos, mas reduzimos a regeneração de combustível para limitar a frequência de uso.\nVida padrão reduzida de 225 para 200.\nVoo Veloz\nAceleração aumentada de 25 para 28 m por segundo.\nTaxa de regeneração de combustível reduzida de 25% para 20% por segundo.",
+      "value_changes": [
+        {
+          "old_value": "225",
+          "new_value": "200",
+          "text": "Vida padrão reduzida de 225 para 200."
+        },
+        {
+          "old_value": "25",
+          "new_value": "28 m por segundo",
+          "text": "Aceleração aumentada de 25 para 28 m por segundo."
+        },
+        {
+          "old_value": "25%",
+          "new_value": "20% por segundo",
+          "text": "Taxa de regeneração de combustível reduzida de 25% para 20% por segundo."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Mauga",
+      "hero_id": "mauga",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: mudanças recentes reduziram a eficácia geral do Mauga, e sua taxa de vitórias caiu abaixo do nível aceitável. Restaurar parte de sua armadura padrão melhora sua sobrevivência, enquanto aumentar o dano de queimadura recompensa incendiar inimigos sem dar ênfase adicional aos Tanques adversários.\nArmadura padrão aumentada de 125 para 150.\nMetralhadoras Incendiárias\nDano de queimadura ao longo do tempo aumentado de 15 para 20.",
+      "value_changes": [
+        {
+          "old_value": "125",
+          "new_value": "150",
+          "text": "Armadura padrão aumentada de 125 para 150."
+        },
+        {
+          "old_value": "15",
+          "new_value": "20",
+          "text": "Dano de queimadura ao longo do tempo aumentado de 15 para 20."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Mizuki",
+      "hero_id": "mizuki",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Corrigimos um problema que podia deixar Mizuki preso na carga em Circuit Royal.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Ramattra",
+      "hero_id": "ramattra",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: aumentar a munição do Acelerador do Vazio melhora a habilidade de Ramattra de manter a pressão à longa distância fora da Forma Nêmesis.\nAcelerador do Vazio\nMunição aumentada de 100 para 125.",
+      "value_changes": [
+        {
+          "old_value": "100",
+          "new_value": "125",
+          "text": "Munição aumentada de 100 para 125."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Reaper",
+      "hero_id": "reaper",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: mudanças recentes nas áreas de acerto e no tamanho dos projéteis reduziram a eficácia geral do Reaper. Aumentar sua vida padrão melhora sua sobrevivência e ajuda a compensar essas mudanças.\nVida padrão aumentada de 275 para 300.",
+      "value_changes": [
+        {
+          "old_value": "275",
+          "new_value": "300",
+          "text": "Vida padrão aumentada de 275 para 300."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Shion",
+      "hero_id": "shion",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: reduzir a dispersão inicial de Execução a torna mais confiável a curta distância, mesmo sem carga total. Também reduzimos o intervalo entre movimento e disparo de Sequência Satsuriku, permitindo que Shion se reposicione mais depressa e diminuindo a pausa entre as saraivadas.\nExecução\nDispersão inicial reduzida de 8,5 para 5,7 graus.\nSequência Satsuriku\nTempo de lançamento e movimento por saraivada reduzido de 0,6 para 0,5 s.",
+      "value_changes": [
+        {
+          "old_value": "8,5",
+          "new_value": "5,7 graus",
+          "text": "Dispersão inicial reduzida de 8,5 para 5,7 graus."
+        },
+        {
+          "old_value": "0,6",
+          "new_value": "0,5 s",
+          "text": "Tempo de lançamento e movimento por saraivada reduzido de 0,6 para 0,5 s."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Sojourn",
+      "hero_id": "sojourn",
+      "mode": "Stadium",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Superadesão – Poder\nDano aumentado para 10% de dano reduzido (era 25%).",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Sombra",
+      "hero_id": "sombra",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: com as mudanças recentes nas interações dos Kits Médicos entre Hackear da Sombra e Disrupção Sônica do Hanzo, o PEM agora irá sobrepor todos os efeitos inimigos aplicados aos Kits Médicos, a fim de preservar sua eficácia como habilidade suprema.\nPEM\nAgora substitui os efeitos de hackeamento dos inimigos nos Kits Médicos.\nCyberspace\nWeaken effect reduced from 50% to 40%.\nEMP\nNow overrides enemy hack effects on health packs.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Sombra",
+      "hero_id": "sombra",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Corrigimos um problema que ocorria quando as barras de vida dos aliados estavam definidas como “Contextual”.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Vendetta",
+      "hero_id": "vendetta",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: mudanças recentes aumentaram a letalidade geral da Vendetta. Aumentar o atraso do primeiro golpe da Presa Palatina desacelera suas sequências de ataques, enquanto reduzir a velocidade do salto durante o golpe elevado facilita acompanhar seus movimentos. Também reduzimos a repulsão de Investida Turbilhão com Tempestade Avassaladora equipada para limitar os deslocamentos repetidos causados por vários acertos.\nPresa Palatina\nVelocidade do salto durante o golpe elevado reduzida de 11 para 9,5.\nAtraso do golpe inicial aumentado de 0,15 para 0,2 s.\nInvestida Turbilhão\nRepulsão horizontal do aprimoramento Tempestade Avassaladora reduzida de 8 para 4.\nSuporte",
+      "value_changes": [
+        {
+          "old_value": "11",
+          "new_value": "9,5",
+          "text": "Velocidade do salto durante o golpe elevado reduzida de 11 para 9,5."
+        },
+        {
+          "old_value": "0,15",
+          "new_value": "0,2 s",
+          "text": "Atraso do golpe inicial aumentado de 0,15 para 0,2 s."
+        },
+        {
+          "old_value": "8",
+          "new_value": "4",
+          "text": "Repulsão horizontal do aprimoramento Tempestade Avassaladora reduzida de 8 para 4."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Vendetta",
+      "hero_id": "vendetta",
+      "mode": "Stadium",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Sede de Sangue Suprema – Poder\nRoubo de vida reduzido para 3% (era 4%).\nMassacre Desmedido - Poder\nAcúmulo de Massacre por eliminações aumentado para 3 (era 2).\nCorreção de problemas",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Winston",
+      "hero_id": "winston",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Comentário dos desenvolvedores: depois da redução no tempo de recarga do Projetor de Barreira, a Barreira Revitalizadora ficou mais eficaz pelo maior tempo de atividade. Estamos reduzindo um pouco sua cura para compensar.\nBarreira Revitalizadora – Aprimoramento Principal\nCura por segundo reduzida de 35 para 30.\nDano",
+      "value_changes": [
+        {
+          "old_value": "35",
+          "new_value": "30",
+          "text": "Cura por segundo reduzida de 35 para 30."
+        }
+      ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Winston",
+      "hero_id": "winston",
+      "mode": "Stadium",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Campo de Tesla – Poder\nDano do Campo de Tesla reduzido para 30 a cada 1 s (era 40).",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Wrecking Ball",
+      "hero_id": "wrecking ball",
+      "mode": "Overwatch",
+      "date": "3 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Corrigimos um problema em que os controles de retração da Garra do Wrecking Ball podiam aumentar muito sua velocidade de rolamento.",
+      "value_changes": [],
       "category": "hero_update"
     },
     {
