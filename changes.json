@@ -18926,7 +18926,7 @@
       "date": "3 de novembro de 2026",
       "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
       "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
-      "raw_text": "Comentário dos desenvolvedores: a cura instantânea adicionada a Inspirar aumentou a capacidade de cura da Brigitte, mas teve pouco efeito sobre sua habilidade de manter a si mesma e os aliados vivos durante os combates. Aumentar essa cura instantânea e reduzir seu tempo de recarga interno permite curar com mais frequência em ataques prolongados.\nInspirar\nTempo de recarga interno reduzido de 1,25 para 1 s.\nCura instantânea aumentada de 12 para 15.\nDoctrine\nComentário dos desenvolvedores: o desempenho geral de Doctrine está relativamente equilibrado desde seu lançamento. Aumentar os tempos de recarga de Impulso Oculto e Infusão exige mais atenção ao uso das duas habilidades durante os ataques, sem reduzir o poder individual de cada uma.\nImpulso Oculto\nTempo de recarga aumentado de 8 para 10 s.\nInfusão\nTempo de recarga aumentado de 8 para 9 s.\nInfuse\nCooldown increased from 8 to 9 seconds.",
+      "raw_text": "Comentário dos desenvolvedores: a cura instantânea adicionada a Inspirar aumentou a capacidade de cura da Brigitte, mas teve pouco efeito sobre sua habilidade de manter a si mesma e os aliados vivos durante os combates. Aumentar essa cura instantânea e reduzir seu tempo de recarga interno permite curar com mais frequência em ataques prolongados.\nInspirar\nTempo de recarga interno reduzido de 1,25 para 1 s.\nCura instantânea aumentada de 12 para 15.\nDoctrine\nComentário dos desenvolvedores: o volume de cura do Doctrine era alto se comparada às outras utilidades do personagem. Aumentar o tempo de recuperação do disparo primário do Cetro Eterno reduz a cura gerada, e a redução dos valores infundidos diminui o potencial explosivo dele. Aumentar os tempos de recarga de Impulso Oculto e Infusão exige mais atenção ao uso das duas habilidades durante os ataques, sem reduzir o poder individual de cada uma.\nCetro Eterno\nTempo de recuperação do disparo primário aumentado de 0,6 para 0,65 s.\nDano infundido reduzido de 90 para 80.\nCura infundida reduzida de 120 para 110.\nImpulso Oculto\nTempo de recarga aumentado de 8 para 10 s.\nInfusão\nTempo de recarga aumentado de 8 para 9 s.",
       "value_changes": [
         {
           "old_value": "1,25",
@@ -18937,6 +18937,21 @@
           "old_value": "12",
           "new_value": "15",
           "text": "Cura instantânea aumentada de 12 para 15."
+        },
+        {
+          "old_value": "0,6",
+          "new_value": "0,65 s",
+          "text": "Tempo de recuperação do disparo primário aumentado de 0,6 para 0,65 s."
+        },
+        {
+          "old_value": "90",
+          "new_value": "80",
+          "text": "Dano infundido reduzido de 90 para 80."
+        },
+        {
+          "old_value": "120",
+          "new_value": "110",
+          "text": "Cura infundida reduzida de 120 para 110."
         },
         {
           "old_value": "8",
@@ -19232,8 +19247,19 @@
       "date": "3 de novembro de 2026",
       "patch_title": "Notas de atualização de Overwatch – 3 de novembro de 2026",
       "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
-      "raw_text": "Comentário dos desenvolvedores: com as mudanças recentes nas interações dos Kits Médicos entre Hackear da Sombra e Disrupção Sônica do Hanzo, o PEM agora irá sobrepor todos os efeitos inimigos aplicados aos Kits Médicos, a fim de preservar sua eficácia como habilidade suprema.\nPEM\nAgora substitui os efeitos de hackeamento dos inimigos nos Kits Médicos.\nCyberspace\nWeaken effect reduced from 50% to 40%.\nEMP\nNow overrides enemy hack effects on health packs.",
-      "value_changes": [],
+      "raw_text": "Comentário dos desenvolvedores: a duração de Ajuste criou um tempo de atividade que diminuiu o impacto da escolha de onde e em quem usá-lo. Reduzimos a duração desta habilidade para dar mais ênfase a estas decisões sem perder sua eficácia quando bem utilizada. Também reduzimos o efeito de Enfraquecimento de Ciberespaço para os inimigos terem mais oportunidade de responder. Com as mudanças recentes nas interações dos Kits Médicos entre Hackear da Sombra e Disrupção Sônica do Hanzo, o PEM agora irá sobrepor todos os efeitos inimigos aplicados aos Kits Médicos, a fim de preservar sua eficácia como habilidade suprema.\nAjuste\nDuração reduzida de 12 para 10 s.\nCiberespaço\nEnfraquecimento reduzido de 50% para 40%.\nPEM\nAgora substitui os efeitos de hackeamento dos inimigos nos Kits Médicos.",
+      "value_changes": [
+        {
+          "old_value": "12",
+          "new_value": "10 s",
+          "text": "Duração reduzida de 12 para 10 s."
+        },
+        {
+          "old_value": "50%",
+          "new_value": "40%",
+          "text": "Enfraquecimento reduzido de 50% para 40%."
+        }
+      ],
       "category": "hero_update"
     },
     {
