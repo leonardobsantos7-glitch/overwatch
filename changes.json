@@ -1,8 +1,8 @@
 {
   "source": "Blizzard official Overwatch patch notes",
-  "generated_at": "2026-11-06",
-  "total_records": 1810,
-  "total_overwatch_records": 1604,
+  "generated_at": "2026-11-07",
+  "total_records": 1811,
+  "total_overwatch_records": 1605,
   "total_stadium_records": 206,
   "records": [
     {
@@ -22108,6 +22108,17 @@
       "patch_title": "Notas de atualização de Overwatch – 5 de novembro de 2019",
       "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2019/11/",
       "raw_text": "Núcleo Fundido\nCusto reduzido em 10%",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Wrecking Ball",
+      "hero_id": "wrecking ball",
+      "mode": "Overwatch",
+      "date": "5 de novembro de 2026",
+      "patch_title": "Notas de atualização de Overwatch – 5 de novembro de 2026",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2026/11/",
+      "raw_text": "Garra\nLimite de velocidade base do Wrecking Ball ao retrair a Garra aumentado em 15%.\nReforços de velocidade aliados agora aumentam o limite de velocidade do Wrecking Ball ao retrair a Garra.\nCorreção de problemas\nGeral\nJogadores que não alcançaram a Meta 4 na edição anterior dos Ímpetos Competitivos não ficarão mais com uma assinatura que não pode ser desequipada.",
       "value_changes": [],
       "category": "hero_update"
     },
