@@ -1,8 +1,8 @@
 {
   "source": "Blizzard official Overwatch patch notes",
-  "generated_at": "2026-11-26",
-  "total_records": 1802,
-  "total_overwatch_records": 1596,
+  "generated_at": "2026-11-27",
+  "total_records": 1811,
+  "total_overwatch_records": 1605,
   "total_stadium_records": 206,
   "records": [
     {
@@ -16563,6 +16563,105 @@
           "text": "Taxa de degeneração aumentada de 2 para 2,5 por s."
         }
       ],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Ashe",
+      "hero_id": "ashe",
+      "mode": "Overwatch",
+      "date": "25 de outubro de 2022",
+      "patch_title": "Notas de atualização de Overwatch 2 – 25 de outubro de 2022",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2022/10/",
+      "raw_text": "Corrigimos um problema com a animação do emote Dança em fila, que não era feita corretamente com o visual Chapeuzinho Vermelho",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Bastion",
+      "hero_id": "bastion",
+      "mode": "Overwatch",
+      "date": "25 de outubro de 2022",
+      "patch_title": "Notas de atualização de Overwatch 2 – 25 de outubro de 2022",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2022/10/",
+      "raw_text": "O Bastion voltou para a escalação\nResolvemos um problema com a Configuração: Artilharia do Bastion que permitia aos jogadores disparar mais do que os três disparos concedidos\nA arma de Bastion não deve mais desaparecer quando Configuração: Artilharia estiver sendo usada\nRainha Junker\nA Lâmina Serrilhada não vai mais ser desviada e nem retornará devido a habilidades de aliados.",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Kiriko",
+      "hero_id": "kiriko",
+      "mode": "Overwatch",
+      "date": "25 de outubro de 2022",
+      "patch_title": "Notas de atualização de Overwatch 2 – 25 de outubro de 2022",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2022/10/",
+      "raw_text": "Agora, o visual \"Tanpopo\" pode ser comprado e equipado\nA pose heroica de Kiriko já está desbloqueada\nCorrigimos um problema que impedia o Passo Rápido de sempre curar os efeitos negativos;\nCorrigimos um problema com a Corrida da Kitsune, que não estava reduzindo corretamente o tempo de recarga do Campo de Imortalidade do Baptiste",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Mei",
+      "hero_id": "mei",
+      "mode": "Overwatch",
+      "date": "25 de outubro de 2022",
+      "patch_title": "Notas de atualização de Overwatch 2 – 25 de outubro de 2022",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2022/10/",
+      "raw_text": "Corrigimos um bug que deixava de rodar os efeitos visuais da Mei durante as partidas",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Mercy",
+      "hero_id": "mercy",
+      "mode": "Overwatch",
+      "date": "25 de outubro de 2022",
+      "patch_title": "Notas de atualização de Overwatch 2 – 25 de outubro de 2022",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2022/10/",
+      "raw_text": "Resolvemos um problema que repetia sem parar a animação do disparo primário da Mercy após ela trocar de arma",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Reinhardt",
+      "hero_id": "reinhardt",
+      "mode": "Overwatch",
+      "date": "25 de outubro de 2022",
+      "patch_title": "Notas de atualização de Overwatch 2 – 25 de outubro de 2022",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2022/10/",
+      "raw_text": "Modificamos o lugar dos pingentes de arma do Reinhardt",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Roadhog",
+      "hero_id": "roadhog",
+      "mode": "Overwatch",
+      "date": "25 de outubro de 2022",
+      "patch_title": "Notas de atualização de Overwatch 2 – 25 de outubro de 2022",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2022/10/",
+      "raw_text": "Corrigimos um problema que afetava a eficácia da Corrente de Gancho do Roadhog, em que ela não acertava o alvo, mesmo quando deveria ter acertado;\nCorrigimos um problema com a animação do ataque corpo a corpo do Roadhog, que não estava rodando corretamente",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Symmetra",
+      "hero_id": "symmetra",
+      "mode": "Overwatch",
+      "date": "25 de outubro de 2022",
+      "patch_title": "Notas de atualização de Overwatch 2 – 25 de outubro de 2022",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2022/10/",
+      "raw_text": "A Symmetra não consegue mais utilizar sua habilidade suprema e colocar seu teletransportador ao mesmo tempo",
+      "value_changes": [],
+      "category": "hero_update"
+    },
+    {
+      "hero": "Torbjörn",
+      "hero_id": "torbjorn",
+      "mode": "Overwatch",
+      "date": "25 de outubro de 2022",
+      "patch_title": "Notas de atualização de Overwatch 2 – 25 de outubro de 2022",
+      "source": "https://overwatch.blizzard.com/pt-br/news/patch-notes/live/2022/10/",
+      "raw_text": "O Torbjörn voltou ao Jogo Competitivo\nA Sobrecarga não pode mais ser usada várias vezes seguidas\nTopo da publicação",
+      "value_changes": [],
       "category": "hero_update"
     },
     {
